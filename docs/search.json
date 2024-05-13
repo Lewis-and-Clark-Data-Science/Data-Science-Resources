@@ -19,5 +19,26 @@
     "title": "Hello, Quarto",
     "section": "Meet the penguins",
     "text": "Meet the penguins\n\nThe penguins data from the palmerpenguins package contains size measurements for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.\nThe plot below shows the relationship between flipper and bill lengths of these penguins."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "let’s see if this works"
+  },
+  {
+    "objectID": "about.html#demo-website",
+    "href": "about.html#demo-website",
+    "title": "About",
+    "section": "",
+    "text": "let’s see if this works"
+  },
+  {
+    "objectID": "codechunks.html",
+    "href": "codechunks.html",
+    "title": "codechunks",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   }
 ]

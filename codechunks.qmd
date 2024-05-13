@@ -1,0 +1,20 @@
+---
+title: "codechunks"
+editor: visual
+filters: 
+  - webr
+format: html
+engine: knitr
+---
+
+```{webr-r}
+
+1+1
+
+```
+
+```{webr-r}
+z<- 3
+l<- 2
+z*l
+```
