@@ -89,12 +89,9 @@ Create a new variable called age_group that groups the "age" variable into three
 str(opinion_data$age_group) # this code will run successfully and indicate a factor variable was created if your code is right!
 ```
 
-
-:::::{.question}
-
-::::
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
+
 ```{webr-r}
 # Hint: You might need to categorize the 'age' data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions.
 ```
@@ -102,6 +99,7 @@ str(opinion_data$age_group) # this code will run successfully and indicate a fac
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
+
 ```{webr-r}
 opinion_data <- opinion_data |> 
   mutate(age_group = case_when(
@@ -123,5 +121,158 @@ opinion_data <- opinion_data |>
     age >= 60 ~ "Senior"), 
   age_group = as.factor(age_group)) # converting the new column to a factor
 ```
+:::
+
+### Exercise 2
+
+Use the `fct_expand()` function to add one new level, "Libertarian", to the "ideology" factor variable.
+
+```{webr-r}
+# Your code here
+
+levels(opinion_data$ideology) # if your code worked, you should see the new levels with this line of code
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+Use the fct_expand() function on the 'ideology' column of 'opinion_data'. Don't forget to assign the new levels you want to add.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+```{webr-r}
+opinion_data <- opinion_data |> 
+  mutate(ideology = fct_expand(______, "______"))
+```
+::: 
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+```{webr-r}
+opinion_data <- opinion_data |> 
+  mutate(ideology = fct_expand(ideology, "Libertarian"))
+```
+:::
+
+
+### Exercise 3
+
+Recategorize the "race" factor variable, replacing "Hispanic" with "Latino" using the `fct_recode()` function.
+
+```{webr-r}
+# Your code here
+
+levels(opinion_data$race) # if your code worked, the recoded levels should appear here
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+Use the fct_recode() function with the 'race' column and specify that "Latino" should replace "Hispanic".
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+opinion_data <- opinion_data |> 
+  mutate(race = ________(race, "______" = "______"))```
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Hint
+```{webr-r}
+opinion_data <- opinion_data |> 
+  mutate(race = fct_recode(race, "Latino" = "Hispanic"))
+```
+::: 
+
+
+### Exercise 4
+
+Reclassify the "religion" variable into two categories: "Christian" and "Non-Christian" by creating a new factor variable.
+
+```{webr-r}
+# Your code here
+
+levels(opinion_data$religion) # Only two levels should appear if done correctly
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+You might need to manually recode the 'religion' levels into 'Christian' and 'NonChristian'. Think about using a function that allows specifying conditions for recoding.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+
+opinion_data <- opinion_data |>
+  mutate(religion = _______(_______, 
+                                  Christian = c("Catholic", "Protestant"),
+                                  NonChristian = c("Atheist", "Hindu", "Jewish", "Buddhist")))
+
+```
 
 :::
+
+::: {.callout-note collapse="true" icon="false"}
+## Hint
+```{webr-r}
+opinion_data <- opinion_data |> 
+  mutate(religion = fct_collapse(religion, 
+                                  Christian = c("Catholic", "Protestant"),
+                                  NonChristian = c("Atheist", "Hindu", "Jewish", "Buddhist")))
+```
+:::
+
+
+### Exercise 5
+
+Currently a frequency table of the variable 'party' would look like this:
+
+```{webr-r}
+count(opinion_data, party)
+```
+
+Reorder the levels of the "party" factor variable based on their frequencies and then create a frequency table to view the number of respondents associated with each party.
+
+```{webr-r}
+# Your code here
+
+count(opinion_data, party) # the table should appear in a different order if successfully coded
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the fct_infreq() function to reorder the levels of the 'party' variable in 'opinion_data' based on their frequencies.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+# To reorder:
+opinion_data <- opinion_data |> 
+   mutate(party = fct_infreq(_____))
+
+# To create a frequency table:
+count(opinion_data, ______)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+```{webr-r}
+opinion_data <- opinion_data |> 
+  mutate(party = fct_infreq(party))
+
+# Create frequency table
+count(opinion_data, party)
+```
+:::
+
+Congratulations, you finished this tutorial!
