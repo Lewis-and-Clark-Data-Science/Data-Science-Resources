@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!Intro R Tutorial.qmd"
+    - "!Testing shinylive.qmd"
 
 website:
   title: "Olivia test - hello quarto"
@@ -9,9 +13,12 @@ website:
       - about.qmd
       - hello.qmd
       - codechunks.qmd
+      - Factor Tutorial.qmd
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+    
+    

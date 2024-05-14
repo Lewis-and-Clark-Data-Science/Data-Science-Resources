@@ -1,0 +1,127 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+  - naquiz
+title: "Introduction to forcats Package"
+---
+
+```{webr-r}
+#| label: load-packages
+#| context:setup
+    # context setup prevents this from being shown in the website
+
+library(tidyverse)
+
+opinion_data <- tibble(
+  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), 
+  ideology = factor(c("Liberal", "Conservative", "Moderate", "Liberal", "Conservative", "Moderate", "Liberal", "Moderate", "Conservative", "Liberal", "Moderate", "Conservative", "Liberal", "Conservative", "Moderate", "Liberal")), 
+  race = factor(c("White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "Black")), # race for new entry
+  gender = factor(c("Male", "Female", "Male", "Male", "Female", "Female", "Male", "Male", "Female", "Male", "Female", "Male", "Male", "Female", "Female", "Female")), 
+  party = factor(c("Strong Republican", "Weak Republican", "Strong Democrat", "Strong Republican", "Weak Republican", "Weak Democrat", "Weak Republican", "Strong Democrat", "Weak Democrat", "Strong Republican", "Strong Republican", "Strong Republican", "Weak Democrat", "Strong Democrat", "Weak Republican", "Very Strong Democrat"), levels = c("Strong Republican", "Weak Republican", "Strong Democrat", "Weak Democrat", "Very Strong Democrat")),
+  religion = factor(c("Catholic", "Protestant", "Atheist", "Catholic", "Protestant", "Atheist", "Hindu", "Jewish", "Buddhist", "Catholic", "Protestant", "Atheist", "Hindu", "Jewish", "Buddhist", "Protestant")), 
+  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) 
+)
+
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Welcome
+
+In this tutorial, you will learn how to work with categorical data using the forcats package in the tidyverse. Categorical data is essential in data analysis, and forcats provides powerful tools for managing factors.
+
+### Functions in Focus
+
+Before we dive into the exercises, let's introduce the key functions we will be working with and provide some guidance on their syntax:
+
+1.  `as.factor()`: This function can convert a variable in another format into a factor variable. Syntax: \`as.factor(nonfactor_variable)
+
+2.  `fct_expand()`: This function is used to add new levels to a factor variable. Syntax: `fct_expand(factor_variable, "new_levels")`
+
+3.  `fct_collapse()`: Use this function to group levels in a factor variable into broader categories. Syntax: `fct_collapse(factor_variable, new_levels=c("old_leve1", "old_level2"))`
+
+4.  `fct_recode()`: This function allows you to recode levels in a factor variable. Syntax: `fct_recode(factor_variable, new_level="old_level")`
+
+5.  `fct_lump_n()`: Use `fct_lump_n()` to lump levels in a factor variable into broader categories. Syntax: `fct_lump(factor_variable, n=X)`
+
+6.  `fct_infreq()`: Use `fct_infreq()` to reorder the levels of the factor variable to follow the frequency of observations for different factor levels. Syntax: `fct_infreq(factor_variable`
+
+Now, let's proceed to the exercises!
+
+## Our Dataset
+
+We will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.
+
+```{webr-r}
+# Create a sample dataset
+opinion_data <- tibble(
+  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), 
+  ideology = factor(c("Liberal", "Conservative", "Moderate", "Liberal", "Conservative", "Moderate", "Liberal", "Moderate", "Conservative", "Liberal", "Moderate", "Conservative", "Liberal", "Conservative", "Moderate", "Liberal")), 
+  race = factor(c("White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "Black")), # race for new entry
+  gender = factor(c("Male", "Female", "Male", "Male", "Female", "Female", "Male", "Male", "Female", "Male", "Female", "Male", "Male", "Female", "Female", "Female")), 
+  party = factor(c("Strong Republican", "Weak Republican", "Strong Democrat", "Strong Republican", "Weak Republican", "Weak Democrat", "Weak Republican", "Strong Democrat", "Weak Democrat", "Strong Republican", "Strong Republican", "Strong Republican", "Weak Democrat", "Strong Democrat", "Weak Republican", "Very Strong Democrat"), levels = c("Strong Republican", "Weak Republican", "Strong Democrat", "Weak Democrat", "Very Strong Democrat")),
+  religion = factor(c("Catholic", "Protestant", "Atheist", "Catholic", "Protestant", "Atheist", "Hindu", "Jewish", "Buddhist", "Catholic", "Protestant", "Atheist", "Hindu", "Jewish", "Buddhist", "Protestant")), 
+  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) 
+)
+
+```
+
+Here is a preview of the data you will be working with:
+
+```{webr-r}
+opinion_data
+
+```
+
+## Exercises
+
+Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.
+
+### Exercise 1
+
+Create a new variable called age_group that groups the "age" variable into three categories: "Young" (under 40), "Middle-Aged" (40-59), and "Senior" (60 and above). Make this new variable a factor variable.
+
+```{webr-r}
+# Your code here
+
+str(opinion_data$age_group) # this code will run successfully and indicate a factor variable was created if your code is right!
+```
+
+
+:::::{.question}
+
+::::
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+```{webr-r}
+# Hint: You might need to categorize the 'age' data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions.
+```
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+```{webr-r}
+opinion_data <- opinion_data |> 
+  mutate(age_group = case_when(
+    ____ ~ "______",
+    ____ & ______ ~ "______",
+    ____ ~ "______"), 
+  age_group = _________(age_group)) 
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+opinion_data <- opinion_data |> 
+  mutate(age_group = case_when(
+    age < 40 ~ "Young",
+    age >= 40 & age <= 59 ~ "Middle-Aged",
+    age >= 60 ~ "Senior"), 
+  age_group = as.factor(age_group)) # converting the new column to a factor
+```
+
+:::

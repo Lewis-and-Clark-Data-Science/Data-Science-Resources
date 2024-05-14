@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Olivia test - hello quarto - codechunks</title>
+<title>Olivia test - hello quarto - Introduction to forcats Package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,6 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -271,7 +272,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"\n1+1","options":{"fig-width":7,"results":"markup","fig-cap":"","autorun":"false","output":"true","context":"interactive","out-height":"","dpi":72,"message":"true","editor-font-scale":1,"warning":"true","out-width":"700px","editor-quick-suggestions":"false","editor-max-height":"","label":"unnamed-chunk-1","classes":"","comment":"","read-only":"false","fig-height":5},"id":1},{"code":"z<- 3\nl<- 2\nz*l","options":{"fig-width":7,"results":"markup","fig-cap":"","autorun":"false","output":"true","context":"interactive","out-height":"","dpi":72,"message":"true","editor-font-scale":1,"warning":"true","out-width":"700px","editor-quick-suggestions":"false","editor-max-height":"","label":"unnamed-chunk-2","classes":"","comment":"","read-only":"false","fig-height":5},"id":2}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"read-only":"false","comment":"","out-width":"700px","editor-font-scale":1,"dpi":72,"out-height":"","context":"setup","classes":"","editor-quick-suggestions":"false","autorun":"true","message":"true","fig-cap":"","results":"markup","fig-height":5,"label":"load-packages","warning":"true","editor-max-height":"","output":"true","fig-width":7},"code":"    # context setup prevents this from being shown in the website\n\nlibrary(tidyverse)\n\nopinion_data <- tibble(\n  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), \n  ideology = factor(c(\"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\")), \n  race = factor(c(\"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"Black\")), # race for new entry\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Male\", \"Male\", \"Female\", \"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Female\")), \n  party = factor(c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Strong Republican\", \"Weak Republican\", \"Weak Democrat\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Strong Republican\", \"Strong Republican\", \"Strong Republican\", \"Weak Democrat\", \"Strong Democrat\", \"Weak Republican\", \"Very Strong Democrat\"), levels = c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Very Strong Democrat\")),\n  religion = factor(c(\"Catholic\", \"Protestant\", \"Atheist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Protestant\")), \n  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) \n)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"id":2,"options":{"read-only":"false","comment":"","out-width":"700px","editor-font-scale":1,"dpi":72,"out-height":"","context":"interactive","classes":"","editor-quick-suggestions":"false","autorun":"false","message":"true","fig-cap":"","results":"markup","fig-height":5,"label":"unnamed-chunk-2","warning":"true","editor-max-height":"","output":"true","fig-width":7},"code":"# Create a sample dataset\nopinion_data <- tibble(\n  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), \n  ideology = factor(c(\"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\")), \n  race = factor(c(\"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"Black\")), # race for new entry\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Male\", \"Male\", \"Female\", \"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Female\")), \n  party = factor(c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Strong Republican\", \"Weak Republican\", \"Weak Democrat\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Strong Republican\", \"Strong Republican\", \"Strong Republican\", \"Weak Democrat\", \"Strong Democrat\", \"Weak Republican\", \"Very Strong Democrat\"), levels = c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Very Strong Democrat\")),\n  religion = factor(c(\"Catholic\", \"Protestant\", \"Atheist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Protestant\")), \n  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) \n)"},{"id":3,"options":{"read-only":"false","comment":"","out-width":"700px","editor-font-scale":1,"dpi":72,"out-height":"","context":"interactive","classes":"","editor-quick-suggestions":"false","autorun":"false","message":"true","fig-cap":"","results":"markup","fig-height":5,"label":"unnamed-chunk-3","warning":"true","editor-max-height":"","output":"true","fig-width":7},"code":"opinion_data"},{"id":4,"options":{"read-only":"false","comment":"","out-width":"700px","editor-font-scale":1,"dpi":72,"out-height":"","context":"interactive","classes":"","editor-quick-suggestions":"false","autorun":"false","message":"true","fig-cap":"","results":"markup","fig-height":5,"label":"unnamed-chunk-4","warning":"true","editor-max-height":"","output":"true","fig-width":7},"code":"# Your code here\n\nstr(opinion_data$age_group) # this code will run successfully and indicate a factor variable was created if your code is right!"},{"id":5,"options":{"read-only":"false","comment":"","out-width":"700px","editor-font-scale":1,"dpi":72,"out-height":"","context":"interactive","classes":"","editor-quick-suggestions":"false","autorun":"false","message":"true","fig-cap":"","results":"markup","fig-height":5,"label":"unnamed-chunk-5","warning":"true","editor-max-height":"","output":"true","fig-width":7},"code":"# Hint: You might need to categorize the 'age' data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions."},{"id":6,"options":{"read-only":"false","comment":"","out-width":"700px","editor-font-scale":1,"dpi":72,"out-height":"","context":"interactive","classes":"","editor-quick-suggestions":"false","autorun":"false","message":"true","fig-cap":"","results":"markup","fig-height":5,"label":"unnamed-chunk-6","warning":"true","editor-max-height":"","output":"true","fig-width":7},"code":"opinion_data <- opinion_data |> \n  mutate(age_group = case_when(\n    ____ ~ \"______\",\n    ____ & ______ ~ \"______\",\n    ____ ~ \"______\"), \n  age_group = _________(age_group)) "},{"id":7,"options":{"read-only":"false","comment":"","out-width":"700px","editor-font-scale":1,"dpi":72,"out-height":"","context":"interactive","classes":"","editor-quick-suggestions":"false","autorun":"false","message":"true","fig-cap":"","results":"markup","fig-height":5,"label":"unnamed-chunk-7","warning":"true","editor-max-height":"","output":"true","fig-width":7},"code":"opinion_data <- opinion_data |> \n  mutate(age_group = case_when(\n    age < 40 ~ \"Young\",\n    age >= 40 & age <= 59 ~ \"Middle-Aged\",\n    age >= 60 ~ \"Senior\"), \n  age_group = as.factor(age_group)) # converting the new column to a factor"}];
 
 </script>
 <script type="module">
@@ -1138,11 +1139,11 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Hello, Quarto</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./codechunks.html" aria-current="page"> 
+    <a class="nav-link" href="./codechunks.html"> 
 <span class="menu-text">codechunks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Factor Tutorial.html"> 
+    <a class="nav-link active" href="./Factor Tutorial.html" aria-current="page"> 
 <span class="menu-text">Introduction to forcats Package</span></a>
   </li>  
 </ul>
@@ -1157,7 +1158,21 @@ globalThis.qwebrExecuteCode = async function (
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <ul class="collapse">
+  <li><a href="#functions-in-focus" id="toc-functions-in-focus" class="nav-link" data-scroll-target="#functions-in-focus">Functions in Focus</a></li>
+  </ul></li>
+  <li><a href="#our-dataset" id="toc-our-dataset" class="nav-link" data-scroll-target="#our-dataset">Our Dataset</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1391,7 +1406,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">codechunks</h1>
+<h1 class="title">Introduction to forcats Package</h1>
 </div>
 
 
@@ -1410,11 +1425,98 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<section id="welcome" class="level2">
+<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
+<p>In this tutorial, you will learn how to work with categorical data using the forcats package in the tidyverse. Categorical data is essential in data analysis, and forcats provides powerful tools for managing factors.</p>
+<section id="functions-in-focus" class="level3">
+<h3 class="anchored" data-anchor-id="functions-in-focus">Functions in Focus</h3>
+<p>Before we dive into the exercises, let’s introduce the key functions we will be working with and provide some guidance on their syntax:</p>
+<ol type="1">
+<li><p><code>as.factor()</code>: This function can convert a variable in another format into a factor variable. Syntax: `as.factor(nonfactor_variable)</p></li>
+<li><p><code>fct_expand()</code>: This function is used to add new levels to a factor variable. Syntax: <code>fct_expand(factor_variable, "new_levels")</code></p></li>
+<li><p><code>fct_collapse()</code>: Use this function to group levels in a factor variable into broader categories. Syntax: <code>fct_collapse(factor_variable, new_levels=c("old_leve1", "old_level2"))</code></p></li>
+<li><p><code>fct_recode()</code>: This function allows you to recode levels in a factor variable. Syntax: <code>fct_recode(factor_variable, new_level="old_level")</code></p></li>
+<li><p><code>fct_lump_n()</code>: Use <code>fct_lump_n()</code> to lump levels in a factor variable into broader categories. Syntax: <code>fct_lump(factor_variable, n=X)</code></p></li>
+<li><p><code>fct_infreq()</code>: Use <code>fct_infreq()</code> to reorder the levels of the factor variable to follow the frequency of observations for different factor levels. Syntax: <code>fct_infreq(factor_variable</code></p></li>
+</ol>
+<p>Now, let’s proceed to the exercises!</p>
+</section>
+</section>
+<section id="our-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
+<p>We will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>another test</p>
+<p>Here is a preview of the data you will be working with:</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>Create a new variable called age_group that groups the “age” variable into three categories: “Young” (under 40), “Middle-Aged” (40-59), and “Senior” (60 and above). Make this new variable a factor variable.</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="question">
+
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1943,4 +2045,5 @@ qwebrInstance.then(
 
 
 
+<script src="site_libs/quarto-contrib/alpine-3.12/alpine@3.12.min.js"></script>
 </body></html>
