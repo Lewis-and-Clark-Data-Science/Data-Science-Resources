@@ -5,6 +5,9 @@ project:
     - "*.qmd"
     - "!Intro R Tutorial.qmd"
     - "!Testing shinylive.qmd"
+  resources: 
+    - co2Data.csv
+
 
 website:
   title: "Olivia test - hello quarto"
