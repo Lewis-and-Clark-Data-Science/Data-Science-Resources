@@ -25,14 +25,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "let’s see if this works\n#| context: setup\n\nurl&lt;- \"https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv\"\ndownload.file(url, \"co2Data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\nco2Data&lt;- read.csv(\"co2Data.csv\")"
+    "text": "let’s see if this works\n#| context: setup\n\nurl&lt;- \"https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv\"\ndownload.file(url, \"co2Data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\nco2Data&lt;- read.csv(\"co2Data.csv\")\n\nok"
   },
   {
     "objectID": "about.html#demo-website",
     "href": "about.html#demo-website",
     "title": "About",
     "section": "",
-    "text": "let’s see if this works\n#| context: setup\n\nurl&lt;- \"https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv\"\ndownload.file(url, \"co2Data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\nco2Data&lt;- read.csv(\"co2Data.csv\")"
+    "text": "let’s see if this works\n#| context: setup\n\nurl&lt;- \"https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv\"\ndownload.file(url, \"co2Data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\nco2Data&lt;- read.csv(\"co2Data.csv\")\n\nok"
   },
   {
     "objectID": "Factor Tutorial.html#welcome",
