@@ -6,7 +6,7 @@ project:
     - "!Intro R Tutorial.qmd"
     - "!Testing shinylive.qmd"
   resources: 
-    - co2Data.csv
+    - owid_co2_data_1.csv
 
 
 website:
