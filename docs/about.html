@@ -149,6 +149,16 @@ ul.task-list li input[type="checkbox"] {
 <section id="demo-website" class="level2">
 <h2 class="anchored" data-anchor-id="demo-website">Demo website</h2>
 <p>let’s see if this works</p>
+<pre class="{webr-r}"><code>#| context: setup
+
+url&lt;- "https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv"
+download.file(url, "co2Data.csv")
+#Pulls data that has been loaded into the Bio 110 github repo. 
+# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add "physiology_data.csv" at the end after the slash 
+
+
+co2Data&lt;- read.csv("co2Data.csv")
+</code></pre>
 
 
 </section>
