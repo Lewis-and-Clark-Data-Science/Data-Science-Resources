@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"code":"##| context: setup\n\nurl<- \"https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv\"\ndownload.file(url, \"co2Data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\nco2Data<- read.csv(\"co2Data.csv\")","options":{"dpi":72,"comment":"","fig-height":5,"read-only":"false","out-width":"700px","fig-cap":"","editor-font-scale":"1","fig-width":7,"warning":"true","context":"interactive","results":"markup","autorun":"false","editor-max-height":"","editor-quick-suggestions":"false","message":"true","output":"true","out-height":"","label":"unnamed-chunk-1","classes":""}}];
+globalThis.qwebrCellDetails = [{"id":1,"code":"##| context: setup\n\nurl<- \"https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv\"\ndownload.file(url, \"co2Data.csv\")\n#Pulls data that has been loaded into the Olivia-Test github repo. \n# Note: must include owid_co2_data_1.csv.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"owid_co2_data_1.csv\" at the end after the slash \n\n\nco2Data<- read.csv(\"co2Data.csv\")","options":{"output":"true","label":"unnamed-chunk-1","editor-font-scale":"1","dpi":72,"fig-cap":"","comment":"","editor-quick-suggestions":"false","message":"true","out-width":"700px","context":"interactive","editor-max-height":"","out-height":"","classes":"","autorun":"false","fig-height":5,"read-only":"false","results":"markup","warning":"true","fig-width":7}}];
 
 </script>
 <script type="module">
@@ -1144,6 +1144,10 @@ globalThis.qwebrExecuteCode = async function (
   <li class="nav-item">
     <a class="nav-link" href="./Factor Tutorial.html"> 
 <span class="menu-text">Introduction to forcats Package</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./brainstorm_612_lessons/climate_change_tutorial.html"> 
+<span class="menu-text">Climate Change Data Tutorial</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->

@@ -21,18 +21,46 @@
     "text": "Meet the penguins\n\nThe penguins data from the palmerpenguins package contains size measurements for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.\nThe plot below shows the relationship between flipper and bill lengths of these penguins."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "brainstorm_612_lessons/climate_change_tutorial.html",
+    "href": "brainstorm_612_lessons/climate_change_tutorial.html",
+    "title": "Climate Change Data Tutorial",
     "section": "",
-    "text": "let’s see if this works\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nok"
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWelcome to this data science tutorial! We’ll be using R to look at climate change data.\nR is a coding language that is often used to look at LARGE amounts of data. It can do all sorts of things including basic math!\nWant to try using R?\nIn the code box right below this, type in 6+3 and press the green play button:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDo you see the answer 9 that popped out right under your code? Pretty cool!\n\n\nToday we’ll be using R to look at climate data. We will be able to create graphs of different variables in our data, like carbon dioxide emissions and temperature.\nWe’ve preloaded a dataset into this tutorial. This was found ### Where?? Let’s start by taking a look at the data set. Click the green play button below and see what happens!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDo you see\nOur data is called co2Data. If you type co2Data into any code chunk, you’ll be able to see our data.\n\n\n\nNow lets make a graph that just looks at the worlds CO2 Emissions over time, this data goes all the way back to 1750!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nWhat if we want to compare this to how the worlds temperature has changed over this same time. We can’t find temperature data directly, but we can easily look at how different the temperature that year is from the average in 1900.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLets graph this!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLets put these two data sets together matching up the years\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nNow what if we ask where most of that CO2 we’re emitting comes from? We can do this with a bar graph that shows the data from the past few years.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow using all this math we did to our data, we can finally make the graph!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nUsing this code, we can choose any two variables and see how they relate to each other! If your questions haven’t been answered by the infographics and graphs you’ve already seen, take a look at the data and see what you can ask to try and learn more.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "about.html#demo-website",
-    "href": "about.html#demo-website",
-    "title": "About",
+    "objectID": "brainstorm_612_lessons/climate_change_tutorial.html#our-data",
+    "href": "brainstorm_612_lessons/climate_change_tutorial.html#our-data",
+    "title": "Climate Change Data Tutorial",
     "section": "",
-    "text": "let’s see if this works\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nok"
+    "text": "Today we’ll be using R to look at climate data. We will be able to create graphs of different variables in our data, like carbon dioxide emissions and temperature.\nWe’ve preloaded a dataset into this tutorial. This was found ### Where?? Let’s start by taking a look at the data set. Click the green play button below and see what happens!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDo you see\nOur data is called co2Data. If you type co2Data into any code chunk, you’ll be able to see our data."
+  },
+  {
+    "objectID": "brainstorm_612_lessons/climate_change_tutorial.html#our-first-graph",
+    "href": "brainstorm_612_lessons/climate_change_tutorial.html#our-first-graph",
+    "title": "Climate Change Data Tutorial",
+    "section": "",
+    "text": "Now lets make a graph that just looks at the worlds CO2 Emissions over time, this data goes all the way back to 1750!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "brainstorm_612_lessons/climate_change_tutorial.html#temperature-data",
+    "href": "brainstorm_612_lessons/climate_change_tutorial.html#temperature-data",
+    "title": "Climate Change Data Tutorial",
+    "section": "",
+    "text": "What if we want to compare this to how the worlds temperature has changed over this same time. We can’t find temperature data directly, but we can easily look at how different the temperature that year is from the average in 1900.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLets graph this!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLets put these two data sets together matching up the years\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "brainstorm_612_lessons/climate_change_tutorial.html#co2-sources",
+    "href": "brainstorm_612_lessons/climate_change_tutorial.html#co2-sources",
+    "title": "Climate Change Data Tutorial",
+    "section": "",
+    "text": "Now what if we ask where most of that CO2 we’re emitting comes from? We can do this with a bar graph that shows the data from the past few years.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow using all this math we did to our data, we can finally make the graph!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "brainstorm_612_lessons/climate_change_tutorial.html#scatter-plot-generator",
+    "href": "brainstorm_612_lessons/climate_change_tutorial.html#scatter-plot-generator",
+    "title": "Climate Change Data Tutorial",
+    "section": "",
+    "text": "Using this code, we can choose any two variables and see how they relate to each other! If your questions haven’t been answered by the infographics and graphs you’ve already seen, take a look at the data and see what you can ask to try and learn more.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "Factor Tutorial.html#welcome",
@@ -54,6 +82,20 @@
     "title": "Introduction to forcats Package",
     "section": "Exercises",
     "text": "Exercises\nHere are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.\n\nExercise 1\nCreate a new variable called age_group that groups the “age” variable into three categories: “Young” (under 40), “Middle-Aged” (40-59), and “Senior” (60 and above). Make this new variable a factor variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nExercise 2\nUse the fct_expand() function to add one new level, “Libertarian”, to the “ideology” factor variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nUse the fct_expand() function on the ‘ideology’ column of ‘opinion_data’. Don’t forget to assign the new levels you want to add.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nExercise 3\nRecategorize the “race” factor variable, replacing “Hispanic” with “Latino” using the fct_recode() function.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nUse the fct_recode() function with the ‘race’ column and specify that “Latino” should replace “Hispanic”.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nExercise 4\nReclassify the “religion” variable into two categories: “Christian” and “Non-Christian” by creating a new factor variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nYou might need to manually recode the ‘religion’ levels into ‘Christian’ and ‘NonChristian’. Think about using a function that allows specifying conditions for recoding.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nExercise 5\nCurrently a frequency table of the variable ‘party’ would look like this:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nReorder the levels of the “party” factor variable based on their frequencies and then create a frequency table to view the number of respondents associated with each party.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nUse the fct_infreq() function to reorder the levels of the ‘party’ variable in ‘opinion_data’ based on their frequencies.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nCongratulations, you finished this tutorial!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "let’s see if this works\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nok"
+  },
+  {
+    "objectID": "about.html#demo-website",
+    "href": "about.html#demo-website",
+    "title": "About",
+    "section": "",
+    "text": "let’s see if this works\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nok"
   },
   {
     "objectID": "codechunks.html",

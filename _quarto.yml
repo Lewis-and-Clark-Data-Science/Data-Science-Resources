@@ -7,6 +7,7 @@ project:
     - "!Testing shinylive.qmd"
   resources: 
     - owid_co2_data_1.csv
+      #This loads our csv onto the site so it can be called up by users later
 
 
 website:
@@ -17,6 +18,8 @@ website:
       - hello.qmd
       - codechunks.qmd
       - Factor Tutorial.qmd
+      - brainstorm_612_lessons/climate_change_tutorial.qmd
+      - Cheatsheet.qmd
 
 format:
   html:
