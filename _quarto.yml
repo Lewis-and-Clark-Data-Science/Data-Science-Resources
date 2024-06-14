@@ -5,6 +5,7 @@ project:
     - "*.qmd"
     - "!Intro R Tutorial.qmd"
     - "!Testing shinylive.qmd"
+    - "!TestUploadData.qmd"
   resources: 
     - owid_co2_data_1.csv
       #This loads our csv onto the site so it can be called up by users later
