@@ -1,8 +1,144 @@
 ---
-title: "Cheatsheet"
+title: "Cheatsheet for Data in the Wild Tutorials"
 format: html
 editor: visual
 filters: 
   - webr
 ---
 
+## Basic R Commands
+
+-   R will perform basic arithmetic.
+
+    -   Use google commands for basic operations like square root, absolute value, etc
+
+    -   Type `help(command)` to find information about any command
+
+    ```{r}
+    #| output: true
+    sqrt(9)
+    ```
+
+-   Create variables: Use `<-` or `=` to assign values to a variable.
+
+    ```{r}
+    #| output: true
+    x<- 7
+    y<- 3
+    x+y
+    ```
+
+-   Create a vector:
+
+    ```{r}
+    #| output: true
+    vector <- c(1,3,7)
+    vector
+    ```
+
+-   Create a data frame: `data.frame(____)`
+
+    ```{r}
+    df <- data.frame(var_1 = c(1,2,3) , var_2 = c("cat", "dog", "fish"))
+    df
+    ```
+
+### Basic Statistics
+
+-   `mean(vector)` : Calculates the mean of a given set of values.
+
+-   `median(vector)` : Calculates the median of a given set of values.
+
+-   `sd(vector)` : Calculates the standard deviation of a given set of values.
+
+-   `nrow(data)`: Calculates the total number of rows in a dataset
+
+-   `na.rm = TRUE` : Remove `NA` values. Add this as an argument to any of the statistics calculations. E.g. `mean(vector, na.rm=TRUE)`
+
+## Working with a data set in the tidyverse
+
+We use the `tidyverse` to analyze data in this cheatsheet. To install run the following code:
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+After installing, to load the tidyverse run:
+
+```{r}
+#| eval: false
+library(tidyverse)
+```
+
+### Uploading and viewing a data set
+
+-   `dataFrame <- read_csv("myCSV.csv")` : Creates a data frame from a file called `myCSV.csv`
+
+-   `write_csv(dataFrame, "myCSV.csv")`: Creates a csv from a data frame
+
+-   `view(dataFrame)`: Enter view-mode to see the entire data frame
+
+-   `str(dataFrame)`: Gives structure of data frame
+
+-   `glimpse(dataFrame)`: Take a quick look at data frame
+
+-   `summary(dataFrame)`: Returns min, max, mean, meadian, 1st/3rd quartiles for all vectors in dataFrame
+
+-   `dataFrame$columnName`: Calls up specific column from a data frame
+
+### Rearranging & Summarizing data
+
+-   Use logical operators to combine conditions: `&`, `|`, `!`
+
+-   Use comparison operators to describe conditions: `<`, `>`, `==`, `!=`, `<=`, `>=`
+
+-   `group_by(.data, column)`: Takes a dataset and groups it by a column/variable
+
+-   `summarize(.data, summaryStat = statistic formula)`: Takes a dataset and outputs summary statistics that you define.
+
+    -   `n()`: Calculates current group size. Can be used in `summarize` and `group_by`
+
+    -   You can combine `group_by` and `summarize` using the pipe (`|>`) to see summary statistics for specific groups/variables.
+
+    Example:
+
+    ```{r}
+    #| eval: false
+      dataFrame |> 
+        group_by(firstColumn)|> 
+        summarize(mean_of_secondColumn = mean(secondColumn), 
+                  standard_deviation_of_secondColumn = sd(secondColumn),
+                  number_in_each_group = n(), 
+                  percent = n()/nrow(dataFrame)*100)
+    ```
+
+-   `filter(.data=myDataFrame, column=="some value")`: Subsets dataframe, lets us pick **rows** of data based on "some value", including a specific value, mean, median, etc.
+
+-   `select(.data, column(s))`: Choose columns from a dataframe.
+
+      - `column1 , column2` : choose column1 and column2
+      - `column1:column5` : choose all columns between 2 columns
+      - `-column1`: choose all columns except column1
+
+-   `mutate(data, newColumn = yourFormula)`: Creates a new column in a dataset defined by a calculation you input. 
+
+-   `arrange(data, column)`: Rearrange data into numerical order by a specific column
+
+### Pipe - Combining functions
+
+Use `|>` OR `%>%` to string functions and data together. Read as "AND THEN".
+
+Note: When using the pipe, you do NOT need to specify your data set in each individual function.
+
+```{r}
+#| eval: false
+dataFrame |> 
+  filter(column == "some value")
+```
+
+
+
+### Other functions
+
+  - `unique(vector)`: Find the number of unique values in a column
