@@ -218,3 +218,14 @@ penguins |>
     labs(title="Median Flipper Length on each Island", x="Island", y="Flipper Length (mm)")
 ```
 
+Boxplot of Adelie penguin flipper length, by sex: 
+  
+```{webr-r}
+AdelieData <- penguins |> 
+  filter(species == "Adelie")
+
+ggplot(data=AdelieData, mapping = aes(x = sex, y = flipper_length_mm, fill=sex))+
+  stat_boxplot(geom="errorbar")+
+  geom_boxplot()+
+  labs(title="Boxplot of Adelie penguin flipper length, by sex", x="Sex",y="Flipper Length (mm)")
+```

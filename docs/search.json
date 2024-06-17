@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "hello.html",
-    "href": "hello.html",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "hello.html#meet-quarto",
-    "href": "hello.html#meet-quarto",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "hello.html#meet-the-penguins",
-    "href": "hello.html#meet-the-penguins",
-    "title": "Hello, Quarto",
-    "section": "Meet the penguins",
-    "text": "Meet the penguins\n\nThe penguins data from the palmerpenguins package contains size measurements for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.\nThe plot below shows the relationship between flipper and bill lengths of these penguins."
-  },
-  {
     "objectID": "brainstorm_612_lessons/climate_change_tutorial.html",
     "href": "brainstorm_612_lessons/climate_change_tutorial.html",
     "title": "Climate Change Data Tutorial",
@@ -63,27 +42,6 @@
     "text": "Using this code, we can choose any two variables and see how they relate to each other! If your questions haven’t been answered by the infographics and graphs you’ve already seen, take a look at the data and see what you can ask to try and learn more.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "Factor Tutorial.html#welcome",
-    "href": "Factor Tutorial.html#welcome",
-    "title": "Introduction to forcats Package",
-    "section": "Welcome",
-    "text": "Welcome\nIn this tutorial, you will learn how to work with categorical data using the forcats package in the tidyverse. Categorical data is essential in data analysis, and forcats provides powerful tools for managing factors.\n\nFunctions in Focus\nBefore we dive into the exercises, let’s introduce the key functions we will be working with and provide some guidance on their syntax:\n\nas.factor(): This function can convert a variable in another format into a factor variable. Syntax: `as.factor(nonfactor_variable)\nfct_expand(): This function is used to add new levels to a factor variable. Syntax: fct_expand(factor_variable, \"new_levels\")\nfct_collapse(): Use this function to group levels in a factor variable into broader categories. Syntax: fct_collapse(factor_variable, new_levels=c(\"old_leve1\", \"old_level2\"))\nfct_recode(): This function allows you to recode levels in a factor variable. Syntax: fct_recode(factor_variable, new_level=\"old_level\")\nfct_lump_n(): Use fct_lump_n() to lump levels in a factor variable into broader categories. Syntax: fct_lump(factor_variable, n=X)\nfct_infreq(): Use fct_infreq() to reorder the levels of the factor variable to follow the frequency of observations for different factor levels. Syntax: fct_infreq(factor_variable\n\nNow, let’s proceed to the exercises!"
-  },
-  {
-    "objectID": "Factor Tutorial.html#our-dataset",
-    "href": "Factor Tutorial.html#our-dataset",
-    "title": "Introduction to forcats Package",
-    "section": "Our Dataset",
-    "text": "Our Dataset\nWe will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere is a preview of the data you will be working with:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "Factor Tutorial.html#exercises",
-    "href": "Factor Tutorial.html#exercises",
-    "title": "Introduction to forcats Package",
-    "section": "Exercises",
-    "text": "Exercises\nHere are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.\n\nExercise 1\nCreate a new variable called age_group that groups the “age” variable into three categories: “Young” (under 40), “Middle-Aged” (40-59), and “Senior” (60 and above). Make this new variable a factor variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nExercise 2\nUse the fct_expand() function to add one new level, “Libertarian”, to the “ideology” factor variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nUse the fct_expand() function on the ‘ideology’ column of ‘opinion_data’. Don’t forget to assign the new levels you want to add.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nExercise 3\nRecategorize the “race” factor variable, replacing “Hispanic” with “Latino” using the fct_recode() function.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nUse the fct_recode() function with the ‘race’ column and specify that “Latino” should replace “Hispanic”.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nExercise 4\nReclassify the “religion” variable into two categories: “Christian” and “Non-Christian” by creating a new factor variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nYou might need to manually recode the ‘religion’ levels into ‘Christian’ and ‘NonChristian’. Think about using a function that allows specifying conditions for recoding.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nExercise 5\nCurrently a frequency table of the variable ‘party’ would look like this:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nReorder the levels of the “party” factor variable based on their frequencies and then create a frequency table to view the number of respondents associated with each party.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nUse the fct_infreq() function to reorder the levels of the ‘party’ variable in ‘opinion_data’ based on their frequencies.\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nCongratulations, you finished this tutorial!"
-  },
-  {
     "objectID": "Cheatsheet.html",
     "href": "Cheatsheet.html",
     "title": "Cheatsheet for Data in the Wild Tutorials",
@@ -116,27 +74,20 @@
     "href": "Cheatsheet.html#examples-using-ggplot-with-other-tidyverse-functions",
     "title": "Cheatsheet for Data in the Wild Tutorials",
     "section": "Examples: Using GGPlot with other tidyverse functions",
-    "text": "Examples: Using GGPlot with other tidyverse functions\nUse the pipe to string together functions and create tidy data before plotting.\nThe following examples use data from the palmerpenguins package which has been preloaded into this document. Click the green play button to see them run. Feel free to edit the code as well if you want to try out other functions!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere’s a preview of the penguin data, and here is a link to more information about the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBasic bar graph of median flipper length on each island:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Examples: Using GGPlot with other tidyverse functions\nUse the pipe to string together functions and create tidy data before plotting.\nThe following examples use data from the palmerpenguins package which has been preloaded into this document. Click the green play button to see them run. Feel free to edit the code as well if you want to try out other functions!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere’s a preview of the penguin data, and here is a link to more information about the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBasic bar graph of median flipper length on each island:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBoxplot of Adelie penguin flipper length, by sex:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "let’s see if this works\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nok"
+    "text": "Currently using this website to test out different projects…"
   },
   {
     "objectID": "about.html#demo-website",
     "href": "about.html#demo-website",
     "title": "About",
     "section": "",
-    "text": "let’s see if this works\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nok"
-  },
-  {
-    "objectID": "codechunks.html",
-    "href": "codechunks.html",
-    "title": "codechunks",
-    "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nanother test"
+    "text": "Currently using this website to test out different projects…"
   }
 ]

@@ -16,9 +16,6 @@ website:
   navbar:
     left:
       - about.qmd
-      - hello.qmd
-      - codechunks.qmd
-      - Factor Tutorial.qmd
       - brainstorm_612_lessons/climate_change_tutorial.qmd
       - Cheatsheet.qmd
 

@@ -305,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"label":"unnamed-chunk-1","read-only":"false","context":"setup","comment":"","output":"true","fig-height":5,"message":"true","results":"markup","out-height":"","warning":"true","autorun":"true","classes":"","fig-cap":"","dpi":72,"editor-quick-suggestions":"false","editor-max-height":"","out-width":"700px","fig-width":7,"editor-font-scale":"1"},"id":1,"code":"\nlibrary(tidyverse)\nlibrary(palmerpenguins)"},{"options":{"label":"unnamed-chunk-2","read-only":"false","context":"interactive","comment":"","output":"true","fig-height":5,"message":"true","results":"markup","out-height":"","warning":"true","autorun":"false","classes":"","fig-cap":"","dpi":72,"editor-quick-suggestions":"false","editor-max-height":"","out-width":"700px","fig-width":7,"editor-font-scale":"1"},"id":2,"code":"penguins"},{"options":{"label":"unnamed-chunk-3","read-only":"false","context":"interactive","comment":"","output":"true","fig-height":5,"message":"true","results":"markup","out-height":"","warning":"true","autorun":"false","classes":"","fig-cap":"","dpi":72,"editor-quick-suggestions":"false","editor-max-height":"","out-width":"700px","fig-width":7,"editor-font-scale":"1"},"id":3,"code":"penguins |> \n  group_by(island) |> \n  summarize(medianFlipperLength = median(flipper_length_mm, na.rm=TRUE))|> \n  \n  ggplot(mapping=aes(x=island, y=medianFlipperLength, fill=island))+\n    geom_bar(stat=\"identity\")+\n    labs(title=\"Median Flipper Length on each Island\", x=\"Island\", y=\"Flipper Length (mm)\")"}];
+globalThis.qwebrCellDetails = [{"options":{"fig-cap":"","out-height":"","editor-max-height":"","warning":"true","autorun":"true","fig-width":7,"comment":"","editor-quick-suggestions":"false","label":"unnamed-chunk-1","out-width":"700px","read-only":"false","results":"markup","classes":"","message":"true","context":"setup","output":"true","editor-font-scale":"1","dpi":72,"fig-height":5},"code":"\nlibrary(tidyverse)\nlibrary(palmerpenguins)","id":1},{"options":{"fig-cap":"","out-height":"","editor-max-height":"","warning":"true","autorun":"false","fig-width":7,"comment":"","editor-quick-suggestions":"false","label":"unnamed-chunk-2","out-width":"700px","read-only":"false","results":"markup","classes":"","message":"true","context":"interactive","output":"true","editor-font-scale":"1","dpi":72,"fig-height":5},"code":"penguins","id":2},{"options":{"fig-cap":"","out-height":"","editor-max-height":"","warning":"true","autorun":"false","fig-width":7,"comment":"","editor-quick-suggestions":"false","label":"unnamed-chunk-3","out-width":"700px","read-only":"false","results":"markup","classes":"","message":"true","context":"interactive","output":"true","editor-font-scale":"1","dpi":72,"fig-height":5},"code":"penguins |> \n  group_by(island) |> \n  summarize(medianFlipperLength = median(flipper_length_mm, na.rm=TRUE))|> \n  \n  ggplot(mapping=aes(x=island, y=medianFlipperLength, fill=island))+\n    geom_bar(stat=\"identity\")+\n    labs(title=\"Median Flipper Length on each Island\", x=\"Island\", y=\"Flipper Length (mm)\")","id":3},{"options":{"fig-cap":"","out-height":"","editor-max-height":"","warning":"true","autorun":"false","fig-width":7,"comment":"","editor-quick-suggestions":"false","label":"unnamed-chunk-4","out-width":"700px","read-only":"false","results":"markup","classes":"","message":"true","context":"interactive","output":"true","editor-font-scale":"1","dpi":72,"fig-height":5},"code":"AdelieData <- penguins |> \n  filter(species == \"Adelie\")\n\nggplot(data=AdelieData, mapping = aes(x = sex, y = flipper_length_mm, fill=sex))+\n  stat_boxplot(geom=\"errorbar\")+\n  geom_boxplot()+\n  labs(title=\"Boxplot of Adelie penguin flipper length, by sex\", x=\"Sex\",y=\"Flipper Length (mm)\")","id":4}];
 
 </script>
 <script type="module">
@@ -1168,18 +1168,6 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./hello.html"> 
-<span class="menu-text">Hello, Quarto</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./codechunks.html"> 
-<span class="menu-text">codechunks</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Factor Tutorial.html"> 
-<span class="menu-text">Introduction to forcats Package</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./brainstorm_612_lessons/climate_change_tutorial.html"> 
 <span class="menu-text">Climate Change Data Tutorial</span></a>
   </li>  
@@ -1651,6 +1639,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Basic bar graph of median flipper length on each island:</p>
 <div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Boxplot of Adelie penguin flipper length, by sex:</p>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
