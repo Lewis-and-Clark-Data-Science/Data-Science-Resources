@@ -8,25 +8,15 @@ filters:
 
 ## Basic R Commands
 
--   R will perform basic arithmetic.
+-   Basic arithmetic
 
-    -   Use google commands for basic operations like square root, absolute value, etc
+    -   Examples: `5*6`, `sqrt(9)`, `abs(-3)`
 
     -   Type `help(command)` to find information about any command
 
-    ```{r}
-    #| output: true
-    sqrt(9)
-    ```
-
 -   Create variables: Use `<-` or `=` to assign values to a variable.
 
-    ```{r}
-    #| output: true
-    x<- 7
-    y<- 3
-    x+y
-    ```
+    -   Example: `x <- 7`
 
 -   Create a vector:
 
@@ -79,13 +69,17 @@ library(tidyverse)
 
 -   `view(dataFrame)`: Enter view-mode to see the entire data frame
 
--   `str(dataFrame)`: Gives structure of data frame
+-   `str(dataFrame)`: Gives the structure of data frame
 
--   `glimpse(dataFrame)`: Take a quick look at data frame
+-   `glimpse(dataFrame)`: Take a quick look at a data frame
 
 -   `summary(dataFrame)`: Returns min, max, mean, meadian, 1st/3rd quartiles for all vectors in dataFrame
 
 -   `dataFrame$columnName`: Calls up specific column from a data frame
+
+-   `unique(vector)`: Find the number of unique values in a column/vector
+
+-   `length()`: Counts the number of entries in a column/vector
 
 ### Rearranging & Summarizing data
 
@@ -99,7 +93,9 @@ library(tidyverse)
 
     -   `n()`: Calculates current group size. Can be used in `summarize` and `group_by`
 
-    -   You can combine `group_by` and `summarize` using the pipe (`|>`) to see summary statistics for specific groups/variables.
+    -   Combine `group_by` and `summarize` using the pipe (`|>`) to see summary statistics for specific groups/variables.
+
+    -   **The pipe:** Use `|>` OR `%>%` to string functions and data together. Read as "AND THEN".
 
     Example:
 
@@ -117,28 +113,108 @@ library(tidyverse)
 
 -   `select(.data, column(s))`: Choose columns from a dataframe.
 
-      - `column1 , column2` : choose column1 and column2
-      - `column1:column5` : choose all columns between 2 columns
-      - `-column1`: choose all columns except column1
+    -   `column1 , column2` : choose column1 and column2
+    -   `column1:column5` : choose all columns between column1 and column5
+    -   `-column1`: choose all columns except column1
 
--   `mutate(data, newColumn = yourFormula)`: Creates a new column in a dataset defined by a calculation you input. 
+-   `mutate(data, newColumn = yourFormula)`: Creates a new column in a dataset defined by a calculation you input.
 
 -   `arrange(data, column)`: Rearrange data into numerical order by a specific column
 
-### Pipe - Combining functions
+## Plotting with GGPlot
 
-Use `|>` OR `%>%` to string functions and data together. Read as "AND THEN".
+### Resources:
 
-Note: When using the pipe, you do NOT need to specify your data set in each individual function.
+-   [GGPlot Cheatsheet pdf](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
 
-```{r}
-#| eval: false
-dataFrame |> 
-  filter(column == "some value")
+-   [Posit.cloud ggplot cheatsheet, website version](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+
+### GGPlot Basics:
+
+-   **Basic structure:**
+
+    ```{r}
+    #| eval: false
+    ggplot(data, mapping=aes()) +
+          geom_function()
+    ```
+
+-   Connect different properties using a `+`
+
+-   **Basic Components:**
+
+    -   Data: `data=dataSet`: Define your data set
+
+    -   Aesthetics: `mapping = aes(variables)`: Define the variables. Can also specify color/fill for your graph and geometries. 
+
+    -   Geometry: `geom_GeometricObject()`: Define the type of plot
+
+### Geometries
+
+-   `geom_histogram()`: Creates a histogram
+
+    -   Syntax: `geom_histogram(bins=X)` Specify number of bins
+
+-   `geom_point()`: Creates points (scatterplot) for each data point
+
+    -   Can specify `color = ___` and `shape = ____`
+
+-   `geom_bar()` : Creates a bar graph
+
+    -   Syntax:
+        -   `geom_bar()`: Aggregates data for you
+        -   `geom_bar(stat = "identity")`: Creates a bar graph with pre-aggregated data that you input
+        -   `geom_bar(position="___")` Can choose "stack" (bars on top of each other), "dodge" (bars side by side) or "fill" (bars stacked, scaled to 100%).
+        -   Add error bars: `geom_errorbar(mapping=aes(ymin, ymax), width)`
+
+-   `geom_boxplot()`: Creates a boxplot
+
+    -   Add error bars: `stat_boxplot(geom="errorbar")`
+
+-   `geom_density()`: Creates a density graph
+
+    -   Syntax: `geom_density(adjust=X)` X is a ratio, how smooth the graph is
+
+-   `geom_smooth(method="lm", se=FALSE)`: Creates a line of best fit
+
+-   `labs()` : Add a title and axes labels to your graph
+
+-   And more!
+
+### Other useful GGPlot functions:
+
+-   `install.packages("ggplot2")` and `library(ggplot2)`: Install and load GGplot package. Note: `ggplot2` is included in the `tidyverse` so you do NOT need to load both packages.
+
+-   `ggsave("yourTitleHere.jpg", currentPlotName)`: Saves "currentPlotName" as a jpg file called "yourTitleHere.jpg".
+
+## Examples: Using GGPlot with other tidyverse functions
+
+Use the pipe to string together functions and create tidy data *before* plotting.
+
+The following examples use data from the `palmerpenguins` package which has been preloaded into this document. Click the green play button to see them run. Feel free to edit the code as well if you want to try out other functions! 
+
+```{webr-r}
+#| context: setup 
+
+library(tidyverse)
+library(palmerpenguins)
 ```
 
+Here's a preview of the penguin data, and here is [a link](https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html) to more information about the data.  
 
+```{webr-r}
+penguins
+```
 
-### Other functions
+Basic bar graph of median flipper length on each island: 
 
-  - `unique(vector)`: Find the number of unique values in a column
+```{webr-r}
+penguins |> 
+  group_by(island) |> 
+  summarize(medianFlipperLength = median(flipper_length_mm, na.rm=TRUE))|> 
+  
+  ggplot(mapping=aes(x=island, y=medianFlipperLength, fill=island))+
+    geom_bar(stat="identity")+
+    labs(title="Median Flipper Length on each Island", x="Island", y="Flipper Length (mm)")
+```
+
