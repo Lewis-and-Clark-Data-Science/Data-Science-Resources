@@ -34,4 +34,21 @@ Census data was from https://data.census.gov/table/ACSST1Y2021.S1902?q=income&g=
   - Search: Income and then on the sidebar choose county (I chose all Michigan counties data) and then can search a year (I chose 2021)
   
 
+```{r}
+library(tidyverse)
+```
+
+```{r}
+waterData<- read_csv("WaterData.csv")
+incomeData<- read_csv("IncomeData.csv")
+```
+
+This gives info about the names of variables and such https://www.waterqualitydata.us/portal_userguide/
+
+waterData Location uses USGS monitoring location numbers
+
+Idea would be: make zipcode or county column in both data sets. 
+
+Would then need to aggregate the data in waterData to have summaries for each county and then can compare and/or make a map 
+
 
