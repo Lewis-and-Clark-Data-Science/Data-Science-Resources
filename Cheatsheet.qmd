@@ -229,3 +229,5 @@ ggplot(data=AdelieData, mapping = aes(x = sex, y = flipper_length_mm, fill=sex))
   geom_boxplot()+
   labs(title="Boxplot of Adelie penguin flipper length, by sex", x="Sex",y="Flipper Length (mm)")
 ```
+
+
