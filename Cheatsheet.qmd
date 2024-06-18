@@ -83,7 +83,7 @@ library(tidyverse)
 
 ### Rearranging & Summarizing data
 
--   Use logical operators to combine conditions: `&`, `|`, `!`
+-   Use logical operators to combine conditions: `&` (and), `|` (or), `!` (not)
 
 -   Use comparison operators to describe conditions: `<`, `>`, `==`, `!=`, `<=`, `>=`
 
