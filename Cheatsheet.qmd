@@ -145,7 +145,7 @@ library(tidyverse)
 
     -   Data: `data=dataSet`: Define your data set
 
-    -   Aesthetics: `mapping = aes(variables)`: Define the variables. Can also specify color/fill for your graph and geometries. 
+    -   Aesthetics: `mapping = aes(variables)`: Define the variables. Can also specify color/fill for your graph and geometries.
 
     -   Geometry: `geom_GeometricObject()`: Define the type of plot
 
@@ -179,6 +179,8 @@ library(tidyverse)
 
 -   `labs()` : Add a title and axes labels to your graph
 
+-   `facet_wrap(~ variable)`: Create separate plots for each aspect of a given variable
+
 -   And more!
 
 ### Other useful GGPlot functions:
@@ -191,7 +193,7 @@ library(tidyverse)
 
 Use the pipe to string together functions and create tidy data *before* plotting.
 
-The following examples use data from the `palmerpenguins` package which has been preloaded into this document. Click the green play button to see them run. Feel free to edit the code as well if you want to try out other functions! 
+The following examples use data from the `palmerpenguins` package which has been preloaded into this document. Click the green play button to see them run. Feel free to edit the code as well if you want to try out other functions!
 
 ```{webr-r}
 #| context: setup 
@@ -200,13 +202,13 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-Here's a preview of the penguin data, and here is [a link](https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html) to more information about the data.  
+Here's a preview of the penguin data, and here is [a link](https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html) to more information about the data.
 
 ```{webr-r}
 penguins
 ```
 
-Basic bar graph of median flipper length on each island: 
+Basic bar graph of median flipper length on each island:
 
 ```{webr-r}
 penguins |> 
@@ -218,8 +220,8 @@ penguins |>
     labs(title="Median Flipper Length on each Island", x="Island", y="Flipper Length (mm)")
 ```
 
-Boxplot of Adelie penguin flipper length, by sex: 
-  
+Boxplot of Adelie penguin flipper length, by sex:
+
 ```{webr-r}
 AdelieData <- penguins |> 
   filter(species == "Adelie")
@@ -230,4 +232,26 @@ ggplot(data=AdelieData, mapping = aes(x = sex, y = flipper_length_mm, fill=sex))
   labs(title="Boxplot of Adelie penguin flipper length, by sex", x="Sex",y="Flipper Length (mm)")
 ```
 
+## Inferential Statistics
 
+### Basic statistical tests
+
+-   `t.test(data, dependentVariable ~ independentVariable)`: 2 sample t-test - compare 2 groups on a numerical measure
+
+    -   Requires: 2 samples of quantitative data
+
+-   `aov(data, dependentVariable ~ independentVariable)`: ANOVA (analysis of variance) test - compare means among groups
+
+    -   Requires: Independent variable - categorical; dependent variable - numerical
+
+-   `TukeyHSD(data)`: Tukey's HSD - Post Hoc test which tells you which *specific* means differ from each other
+
+### Linear regression
+
+-   `cor(data$independentVariable, data$dependentVariable)`: Correlation coefficient - outputs a number between -1 and 1 which tells strength and direction of the relationship between 2 numeric variables
+
+    -   Requires 2 numeric variables
+
+-   `lm(data, dependentVariable ~ independentVariable)`: Fit a linear model
+
+    -   `summary(yourLinearModel)`: View more details about a linear model including regression coefficients, p value for linear model coefficients, quartiles, residual standard error, F-statistic.

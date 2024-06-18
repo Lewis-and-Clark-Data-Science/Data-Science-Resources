@@ -67,7 +67,7 @@
     "href": "Cheatsheet.html#plotting-with-ggplot",
     "title": "Cheatsheet for Data in the Wild Tutorials",
     "section": "Plotting with GGPlot",
-    "text": "Plotting with GGPlot\n\nResources:\n\nGGPlot Cheatsheet pdf\nPosit.cloud ggplot cheatsheet, website version\n\n\n\nGGPlot Basics:\n\nBasic structure:\n\nggplot(data, mapping=aes()) +\n      geom_function()\n\nConnect different properties using a +\nBasic Components:\n\nData: data=dataSet: Define your data set\nAesthetics: mapping = aes(variables): Define the variables. Can also specify color/fill for your graph and geometries.\nGeometry: geom_GeometricObject(): Define the type of plot\n\n\n\n\nGeometries\n\ngeom_histogram(): Creates a histogram\n\nSyntax: geom_histogram(bins=X) Specify number of bins\n\ngeom_point(): Creates points (scatterplot) for each data point\n\nCan specify color = ___ and shape = ____\n\ngeom_bar() : Creates a bar graph\n\nSyntax:\n\ngeom_bar(): Aggregates data for you\ngeom_bar(stat = \"identity\"): Creates a bar graph with pre-aggregated data that you input\ngeom_bar(position=\"___\") Can choose “stack” (bars on top of each other), “dodge” (bars side by side) or “fill” (bars stacked, scaled to 100%).\nAdd error bars: geom_errorbar(mapping=aes(ymin, ymax), width)\n\n\ngeom_boxplot(): Creates a boxplot\n\nAdd error bars: stat_boxplot(geom=\"errorbar\")\n\ngeom_density(): Creates a density graph\n\nSyntax: geom_density(adjust=X) X is a ratio, how smooth the graph is\n\ngeom_smooth(method=\"lm\", se=FALSE): Creates a line of best fit\nlabs() : Add a title and axes labels to your graph\nAnd more!\n\n\n\nOther useful GGPlot functions:\n\ninstall.packages(\"ggplot2\") and library(ggplot2): Install and load GGplot package. Note: ggplot2 is included in the tidyverse so you do NOT need to load both packages.\nggsave(\"yourTitleHere.jpg\", currentPlotName): Saves “currentPlotName” as a jpg file called “yourTitleHere.jpg”."
+    "text": "Plotting with GGPlot\n\nResources:\n\nGGPlot Cheatsheet pdf\nPosit.cloud ggplot cheatsheet, website version\n\n\n\nGGPlot Basics:\n\nBasic structure:\n\nggplot(data, mapping=aes()) +\n      geom_function()\n\nConnect different properties using a +\nBasic Components:\n\nData: data=dataSet: Define your data set\nAesthetics: mapping = aes(variables): Define the variables. Can also specify color/fill for your graph and geometries.\nGeometry: geom_GeometricObject(): Define the type of plot\n\n\n\n\nGeometries\n\ngeom_histogram(): Creates a histogram\n\nSyntax: geom_histogram(bins=X) Specify number of bins\n\ngeom_point(): Creates points (scatterplot) for each data point\n\nCan specify color = ___ and shape = ____\n\ngeom_bar() : Creates a bar graph\n\nSyntax:\n\ngeom_bar(): Aggregates data for you\ngeom_bar(stat = \"identity\"): Creates a bar graph with pre-aggregated data that you input\ngeom_bar(position=\"___\") Can choose “stack” (bars on top of each other), “dodge” (bars side by side) or “fill” (bars stacked, scaled to 100%).\nAdd error bars: geom_errorbar(mapping=aes(ymin, ymax), width)\n\n\ngeom_boxplot(): Creates a boxplot\n\nAdd error bars: stat_boxplot(geom=\"errorbar\")\n\ngeom_density(): Creates a density graph\n\nSyntax: geom_density(adjust=X) X is a ratio, how smooth the graph is\n\ngeom_smooth(method=\"lm\", se=FALSE): Creates a line of best fit\nlabs() : Add a title and axes labels to your graph\nfacet_wrap(~ variable): Create separate plots for each aspect of a given variable\nAnd more!\n\n\n\nOther useful GGPlot functions:\n\ninstall.packages(\"ggplot2\") and library(ggplot2): Install and load GGplot package. Note: ggplot2 is included in the tidyverse so you do NOT need to load both packages.\nggsave(\"yourTitleHere.jpg\", currentPlotName): Saves “currentPlotName” as a jpg file called “yourTitleHere.jpg”."
   },
   {
     "objectID": "Cheatsheet.html#examples-using-ggplot-with-other-tidyverse-functions",
@@ -77,17 +77,24 @@
     "text": "Examples: Using GGPlot with other tidyverse functions\nUse the pipe to string together functions and create tidy data before plotting.\nThe following examples use data from the palmerpenguins package which has been preloaded into this document. Click the green play button to see them run. Feel free to edit the code as well if you want to try out other functions!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere’s a preview of the penguin data, and here is a link to more information about the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBasic bar graph of median flipper length on each island:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBoxplot of Adelie penguin flipper length, by sex:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
+    "objectID": "Cheatsheet.html#inferential-statistics",
+    "href": "Cheatsheet.html#inferential-statistics",
+    "title": "Cheatsheet for Data in the Wild Tutorials",
+    "section": "Inferential Statistics",
+    "text": "Inferential Statistics\n\nBasic statistical tests\n\nt.test(data, dependentVariable ~ independentVariable): 2 sample t-test - compare 2 groups on a numerical measure\n\nRequires: 2 samples of quantitative data\n\naov(data, dependentVariable ~ independentVariable): ANOVA (analysis of variance) test - compare means among groups\n\nRequires: Independent variable - categorical; dependent variable - numerical\n\nTukeyHSD(data): Tukey’s HSD - Post Hoc test which tells you which specific means differ from each other\n\n\n\nLinear regression\n\ncor(data$independentVariable, data$dependentVariable): Correlation coefficient - outputs a number between -1 and 1 which tells strength and direction of the relationship between 2 numeric variables\n\nRequires 2 numeric variables\n\nlm(data, dependentVariable ~ independentVariable): Fit a linear model\n\nsummary(yourLinearModel): View more details about a linear model including regression coefficients, p value for linear model coefficients, quartiles, residual standard error, F-statistic."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Currently using this website to test out different projects…"
+    "text": "Currently using this website to test out different projects…\nLink to github with repositories with various tutorials"
   },
   {
     "objectID": "about.html#demo-website",
     "href": "about.html#demo-website",
     "title": "About",
     "section": "",
-    "text": "Currently using this website to test out different projects…"
+    "text": "Currently using this website to test out different projects…\nLink to github with repositories with various tutorials"
   }
 ]

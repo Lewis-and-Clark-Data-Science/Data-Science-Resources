@@ -305,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"\nlibrary(tidyverse)\nlibrary(palmerpenguins)","id":1,"options":{"editor-font-scale":"1","message":"true","label":"unnamed-chunk-1","fig-cap":"","classes":"","fig-height":5,"dpi":72,"output":"true","context":"setup","out-width":"700px","results":"markup","read-only":"false","comment":"","fig-width":7,"warning":"true","editor-quick-suggestions":"false","autorun":"true","editor-max-height":"","out-height":""}},{"code":"penguins","id":2,"options":{"editor-font-scale":"1","message":"true","label":"unnamed-chunk-2","fig-cap":"","classes":"","fig-height":5,"dpi":72,"output":"true","context":"interactive","out-width":"700px","results":"markup","read-only":"false","comment":"","fig-width":7,"warning":"true","editor-quick-suggestions":"false","autorun":"false","editor-max-height":"","out-height":""}},{"code":"penguins |> \n  group_by(island) |> \n  summarize(medianFlipperLength = median(flipper_length_mm, na.rm=TRUE))|> \n  \n  ggplot(mapping=aes(x=island, y=medianFlipperLength, fill=island))+\n    geom_bar(stat=\"identity\")+\n    labs(title=\"Median Flipper Length on each Island\", x=\"Island\", y=\"Flipper Length (mm)\")","id":3,"options":{"editor-font-scale":"1","message":"true","label":"unnamed-chunk-3","fig-cap":"","classes":"","fig-height":5,"dpi":72,"output":"true","context":"interactive","out-width":"700px","results":"markup","read-only":"false","comment":"","fig-width":7,"warning":"true","editor-quick-suggestions":"false","autorun":"false","editor-max-height":"","out-height":""}},{"code":"AdelieData <- penguins |> \n  filter(species == \"Adelie\")\n\nggplot(data=AdelieData, mapping = aes(x = sex, y = flipper_length_mm, fill=sex))+\n  stat_boxplot(geom=\"errorbar\")+\n  geom_boxplot()+\n  labs(title=\"Boxplot of Adelie penguin flipper length, by sex\", x=\"Sex\",y=\"Flipper Length (mm)\")","id":4,"options":{"editor-font-scale":"1","message":"true","label":"unnamed-chunk-4","fig-cap":"","classes":"","fig-height":5,"dpi":72,"output":"true","context":"interactive","out-width":"700px","results":"markup","read-only":"false","comment":"","fig-width":7,"warning":"true","editor-quick-suggestions":"false","autorun":"false","editor-max-height":"","out-height":""}}];
+globalThis.qwebrCellDetails = [{"options":{"fig-cap":"","out-height":"","autorun":"true","editor-quick-suggestions":"false","message":"true","output":"true","comment":"","warning":"true","fig-height":5,"editor-font-scale":"1","read-only":"false","dpi":72,"results":"markup","editor-max-height":"","fig-width":7,"context":"setup","out-width":"700px","label":"unnamed-chunk-1","classes":""},"id":1,"code":"\nlibrary(tidyverse)\nlibrary(palmerpenguins)"},{"options":{"fig-cap":"","out-height":"","autorun":"false","editor-quick-suggestions":"false","message":"true","output":"true","comment":"","warning":"true","fig-height":5,"editor-font-scale":"1","read-only":"false","dpi":72,"results":"markup","editor-max-height":"","fig-width":7,"context":"interactive","out-width":"700px","label":"unnamed-chunk-2","classes":""},"id":2,"code":"penguins"},{"options":{"fig-cap":"","out-height":"","autorun":"false","editor-quick-suggestions":"false","message":"true","output":"true","comment":"","warning":"true","fig-height":5,"editor-font-scale":"1","read-only":"false","dpi":72,"results":"markup","editor-max-height":"","fig-width":7,"context":"interactive","out-width":"700px","label":"unnamed-chunk-3","classes":""},"id":3,"code":"penguins |> \n  group_by(island) |> \n  summarize(medianFlipperLength = median(flipper_length_mm, na.rm=TRUE))|> \n  \n  ggplot(mapping=aes(x=island, y=medianFlipperLength, fill=island))+\n    geom_bar(stat=\"identity\")+\n    labs(title=\"Median Flipper Length on each Island\", x=\"Island\", y=\"Flipper Length (mm)\")"},{"options":{"fig-cap":"","out-height":"","autorun":"false","editor-quick-suggestions":"false","message":"true","output":"true","comment":"","warning":"true","fig-height":5,"editor-font-scale":"1","read-only":"false","dpi":72,"results":"markup","editor-max-height":"","fig-width":7,"context":"interactive","out-width":"700px","label":"unnamed-chunk-4","classes":""},"id":4,"code":"AdelieData <- penguins |> \n  filter(species == \"Adelie\")\n\nggplot(data=AdelieData, mapping = aes(x = sex, y = flipper_length_mm, fill=sex))+\n  stat_boxplot(geom=\"errorbar\")+\n  geom_boxplot()+\n  labs(title=\"Boxplot of Adelie penguin flipper length, by sex\", x=\"Sex\",y=\"Flipper Length (mm)\")"}];
 
 </script>
 <script type="module">
@@ -1208,6 +1208,11 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#other-useful-ggplot-functions" id="toc-other-useful-ggplot-functions" class="nav-link" data-scroll-target="#other-useful-ggplot-functions">Other useful GGPlot functions:</a></li>
   </ul></li>
   <li><a href="#examples-using-ggplot-with-other-tidyverse-functions" id="toc-examples-using-ggplot-with-other-tidyverse-functions" class="nav-link" data-scroll-target="#examples-using-ggplot-with-other-tidyverse-functions">Examples: Using GGPlot with other tidyverse functions</a></li>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics">Inferential Statistics</a>
+  <ul class="collapse">
+  <li><a href="#basic-statistical-tests" id="toc-basic-statistical-tests" class="nav-link" data-scroll-target="#basic-statistical-tests">Basic statistical tests</a></li>
+  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression">Linear regression</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1617,6 +1622,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ul></li>
 <li><p><code>geom_smooth(method="lm", se=FALSE)</code>: Creates a line of best fit</p></li>
 <li><p><code>labs()</code> : Add a title and axes labels to your graph</p></li>
+<li><p><code>facet_wrap(~ variable)</code>: Create separate plots for each aspect of a given variable</p></li>
 <li><p>And more!</p></li>
 </ul>
 </section>
@@ -1643,8 +1649,38 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Boxplot of Adelie penguin flipper length, by sex:</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="inferential-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="inferential-statistics">Inferential Statistics</h2>
+<section id="basic-statistical-tests" class="level3">
+<h3 class="anchored" data-anchor-id="basic-statistical-tests">Basic statistical tests</h3>
+<ul>
+<li><p><code>t.test(data, dependentVariable ~ independentVariable)</code>: 2 sample t-test - compare 2 groups on a numerical measure</p>
+<ul>
+<li>Requires: 2 samples of quantitative data</li>
+</ul></li>
+<li><p><code>aov(data, dependentVariable ~ independentVariable)</code>: ANOVA (analysis of variance) test - compare means among groups</p>
+<ul>
+<li>Requires: Independent variable - categorical; dependent variable - numerical</li>
+</ul></li>
+<li><p><code>TukeyHSD(data)</code>: Tukey’s HSD - Post Hoc test which tells you which <em>specific</em> means differ from each other</p></li>
+</ul>
+</section>
+<section id="linear-regression" class="level3">
+<h3 class="anchored" data-anchor-id="linear-regression">Linear regression</h3>
+<ul>
+<li><p><code>cor(data$independentVariable, data$dependentVariable)</code>: Correlation coefficient - outputs a number between -1 and 1 which tells strength and direction of the relationship between 2 numeric variables</p>
+<ul>
+<li>Requires 2 numeric variables</li>
+</ul></li>
+<li><p><code>lm(data, dependentVariable ~ independentVariable)</code>: Fit a linear model</p>
+<ul>
+<li><code>summary(yourLinearModel)</code>: View more details about a linear model including regression coefficients, p value for linear model coefficients, quartiles, residual standard error, F-statistic.</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

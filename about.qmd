@@ -9,3 +9,5 @@ filters:
 ## Demo website
 
 Currently using this website to test out different projects...
+
+[Link to github](https://github.com/Lewis-and-Clark-Data-Science) with repositories with various tutorials
