@@ -1,0 +1,9 @@
+```{r}
+url<- "https://lewis-and-clark-data-science.github.io/Olivia-test/1900_census_race_and_birthplaces.csv"
+url<- "https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv"
+download.file(url, "census.csv")
+#Pulls data that has been loaded into the Olivia-Test github repo. 
+
+co2Data<- read.csv("census.csv")
+```
+
