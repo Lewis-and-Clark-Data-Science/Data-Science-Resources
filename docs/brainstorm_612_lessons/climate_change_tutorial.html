@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -272,7 +306,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(tidyverse)","id":1,"options":{"dpi":72,"fig-width":7,"autorun":"true","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"setup","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-1","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv\"\ndownload.file(url, \"co2Data.csv\")\n#Pulls data that has been loaded into the Olivia-Test github repo. \n\nco2Data<- read_csv(\"co2Data.csv\")\n\nco2Data<-co2Data%>%\n  filter(country==\"World\")\n#Filter out individual countries, just have world data\n\nurl<- \"https://lewis-and-clark-data-science.github.io/Olivia-test/data.csv\"\ndownload.file(url, \"data.csv\")\n#Pulls data that has been loaded into the Olivia-Test github repo. \n\ntempData<- read_csv(\"data.csv\")","id":2,"options":{"dpi":72,"fig-width":7,"autorun":"true","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"setup","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-2","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"#Type your code here! \n","id":3,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-3","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"co2Data","id":4,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-4","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"ggplot(data=co2Data, mapping=aes(x=year, y=co2))+\n  geom_line(color=\"#a20000\")+\n  theme_light()+\n  guides(color=F)+\n  labs(title=\"CO2 Emission (World) Over Time\", x=\"Year\", \n       y=\"CO2 Emissions (Million Tons)\")","id":5,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-5","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"tempData<-read_csv(\"data.csv\")\ntempData","id":6,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-6","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"ggplot(data=tempData, mapping=aes(x=Year, y=Anomaly))+\n  geom_line(color=\"#2600a2\")+\n  theme_light()+\n  guides(color=F)+\n  labs(title=\"Temp. Change Over Time\", x=\"Year\", \n       y=\"Temperature Difference from 1900 Average (Celcius)\")","id":7,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-7","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"tempData<-tempData%>%rename(year=Year)\njoinedData<-co2Data%>%full_join(tempData)","id":8,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-8","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"#This uses the data to make new columns that adds to get the entire energy production of the world, then another column that subtracts that number from total co2\n\n#Don't worry about what this does\nco2DataBar<-co2Data%>%\n  group_by(year)%>%\n  mutate(co2_from_energy=sum(coal_co2, gas_co2, oil_co2, na.rm=T))%>%\n  mutate(co2_no_energy=co2-co2_from_energy)\n\n#Filter data to get just the columns we need and make it graphable, we don't need to understand what this does either\nco2DataFiltered<-co2DataBar%>%select(year, co2_no_energy, co2_from_energy)%>%\n  filter(year>=2019)%>%\n  pivot_longer(cols=c(co2_no_energy, co2_from_energy))%>%\n  mutate(year_chr=as.character(year))\nco2DataFiltered","id":9,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-9","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"ggplot(data=co2DataFiltered, mapping=aes(x=year_chr, y=value, fill=name))+\n  #Select what kind of graph we're making\n  geom_col(position=\"dodge\")+\n  #Label the graph to make it easy to read\n  labs(title=\"CO2 Production from Energy Vs. Other Sources\", x=\"Year\", y=\"CO2 In Tons\")+\n  #add a legend to show what each color means \n  scale_fill_discrete(name=\"CO2 Source\", labels=c(\"CO2 from Energy\", \"All Other Sources of CO2\"))+\n  theme_light() #make it pretty :)","id":10,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-10","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"#In these two lines, add the names of the columns you want to plot against each other inside the quotes :)\nXVar<-\"year\"\nYVar<-\"coal_co2\"\n\n#Here you can add titles and labels if you want, feel free to leave these blank as well\nTitle<-\"Population Vs. CO2\"\nXLabel<-\"population\"\nYLabel<-\"CO2 Emissions\"\n\n\n#Run this for a scatter plot\nggplot(data=co2Data, mapping=aes_string(x=XVar, y=YVar))+\n  geom_point(color=\"aquamarine4\")+\n  theme_light()\n \n  #lims(x=c(2000,2020))\n  #ggsave(filename=\"Co2Graph.jpg\")\n#use this last number to make the graph more readable if most of the data is clustered at the bottom.\n#get rid of or add the two hastags in front of \"+\" and \"lims\" to toggle the limit function\n\n  \n  \n","id":11,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-11","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}},{"code":"co2Data<-co2Data%>%filter(year==2020, co2>=10000)\n\nggplot(data=co2Data, mapping=aes(x=country, y=co2))+\n  geom_col(stat=\"count\", color=\"black\")+\n  theme_light()\nggsave(filename = \"co2Bar.jpg\")","id":12,"options":{"dpi":72,"fig-width":7,"autorun":"false","editor-quick-suggestions":"false","editor-max-height":"","fig-cap":"","message":"true","context":"interactive","fig-height":5,"out-width":"700px","out-height":"","classes":"","output":"true","label":"unnamed-chunk-12","results":"markup","warning":"true","editor-font-scale":"1","read-only":"false","comment":""}}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"true","read-only":"false","context":"setup","output":"true","label":"unnamed-chunk-1","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"library(tidyverse)"},{"id":2,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"true","read-only":"false","context":"setup","output":"true","label":"unnamed-chunk-2","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/Olivia-test/owid_co2_data_1.csv\"\ndownload.file(url, \"co2Data.csv\")\n#Pulls data that has been loaded into the Olivia-Test github repo. \n\nco2Data<- read_csv(\"co2Data.csv\")\n\nco2Data<-co2Data%>%\n  filter(country==\"World\")\n#Filter out individual countries, just have world data\n\nurl<- \"https://lewis-and-clark-data-science.github.io/Olivia-test/data.csv\"\ndownload.file(url, \"data.csv\")\n#Pulls data that has been loaded into the Olivia-Test github repo. \n\ntempData<- read_csv(\"data.csv\")"},{"id":3,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-3","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"#Type your code here! \n"},{"id":4,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-4","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"co2Data"},{"id":5,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-5","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"ggplot(data=co2Data, mapping=aes(x=year, y=co2))+\n  geom_line(color=\"#a20000\")+\n  theme_light()+\n  guides(color=F)+\n  labs(title=\"CO2 Emission (World) Over Time\", x=\"Year\", \n       y=\"CO2 Emissions (Million Tons)\")"},{"id":6,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-6","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":""},{"id":7,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-7","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"ggplot(data=tempData, mapping=aes(x=Year, y=Anomaly))+\n  geom_line(color=\"purple\")+\n  theme_light()+\n  labs(title=\"Temp. Change Over Time\", x=\"Year\", \n       y=\"Temperature Difference from 1900 Average (Celcius)\")"},{"id":8,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","output":"true","autorun":"false","read-only":"false","context":"interactive","auto-run":"TRUE","label":"unnamed-chunk-8","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"tempData<-tempData%>%rename(year=Year)\njoinedData<-co2Data%>%full_join(tempData)\n\nggplot(data=joinedData, mapping=aes(x=Anomaly, y=co2))+\n  geom_line(color=\"purple\")+\n  theme_light()+\n  labs(title=\"Temperature and co2 Emissions\", x=\"Temperature Difference from 1900 Average (Celcius)\", \n       y=\"Co2 Emissions (Million Tons)\")"},{"id":9,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"true","read-only":"false","context":"setup","output":"true","label":"unnamed-chunk-9","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"\n#This uses the data to make new columns that adds to get the entire energy production of the world, then another column that subtracts that number from total co2\n\n#Don't worry about what this does\nco2DataBar<-co2Data%>%\n  group_by(year)%>%\n  mutate(co2_from_energy=sum(coal_co2, gas_co2, oil_co2, na.rm=T))%>%\n  mutate(co2_no_energy=co2-co2_from_energy)\n\n#Filter data to get just the columns we need and make it graphable, we don't need to understand what this does either\nco2DataFiltered<-co2DataBar%>%select(year, co2_no_energy, co2_from_energy)%>%\n  filter(year>=2019)%>%\n  pivot_longer(cols=c(co2_no_energy, co2_from_energy))%>%\n  mutate(year_chr=as.character(year))\nco2DataFiltered"},{"id":10,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-10","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"ggplot(data=co2DataFiltered, mapping=aes(x=year_chr, y=value, fill=name))+\n  geom_col(position=\"dodge\")+\n  labs(title=\"CO2 Production from Energy Vs. Other Sources\", x=\"Year\", y=\"CO2 In Tons\")+\n  scale_fill_discrete(name=\"CO2 Source\", labels=c(\"CO2 from Energy (coal, gas, and oil)\", \"All Other Sources of CO2\"))+\n  theme_light()"},{"id":11,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-11","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"XVar<-\"_____\"\nYVar<-\"_____\""},{"id":12,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-12","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"XVar<-\"population\"\nYVar<-\"co2\""},{"id":13,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-13","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"Title<-\"_________\"\nXLabel<-\"_________\"\nYLabel<-\"_________\""},{"id":14,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-14","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"Title<-\"Population Vs. CO2\"\nXLabel<-\"population\"\nYLabel<-\"CO2 Emissions\""},{"id":15,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-15","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"ggplot(data=co2Data, mapping=aes_string(x=XVar, y=YVar))+\n  geom_point(color=\"aquamarine4\")+\n  labs(x=XLabel, y=YLabel, title=Title)+\n  theme_light()\n "},{"id":16,"options":{"fig-width":7,"out-width":"700px","dpi":72,"comment":"","editor-quick-suggestions":"false","fig-cap":"","results":"markup","warning":"true","autorun":"false","read-only":"false","context":"interactive","output":"true","label":"unnamed-chunk-16","fig-height":5,"editor-max-height":"","editor-font-scale":"1","message":"true","out-height":"","classes":""},"code":"ggplot(data=co2Data, mapping=aes_string(x=XVar, y=YVar))+\n  geom_point(color=\"aquamarine4\")+\n  labs(x=XLabel, y=YLabel, title=Title)\n  theme_light()+\n  lims(x=c(2000,2020))"}];
 
 </script>
 <script type="module">
@@ -1472,29 +1506,155 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>In the code chunk below type <code>tempData</code> and click “run code” to see the new data set.</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Lets graph this!</p>
+<p>You should see 2 columns: one called <code>Year</code> and one called <code>Anomaly</code>. The Anomaly column tells us how <em>different</em> the temperature that year was from the average in 1900. This only shows us 10 years, but the data goes all the way to 2023! We can graph the data to visualize it better.</p>
+<p>Lets graph this! Click “run code” and see what happens!</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Lets put these two data sets together matching up the years</p>
+<p>Now, what if we combine our co2 data and our temperature data?</p>
+<p>Lets put these two data sets together matching up the years. Then, we can make a graph of temperature anomaly and co2 levels. Click “run code”.</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="co2-sources" class="level2">
 <h2 class="anchored" data-anchor-id="co2-sources">CO2 Sources</h2>
-<p>Now what if we ask where most of that CO2 we’re emitting comes from? We can do this with a bar graph that shows the data from the past few years.</p>
+<p>Now what if we ask where most of that CO2 we’re emitting comes from? We can do this with a bar graph that shows the data from the past few years. A bar graph is a little more complicated to make, so we’ve edited some of our data in the background to make it easier to graph with. Our new edited data is called <code>co2DataFiltered</code>.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now using all this math we did to our data, we can finally make the graph!</p>
+<p>Let’s see what a graph looks like! Click “run code”.</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Optional: Open this if you want to learn more about how the code works
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>GGPlot is an awesome tool you can use to create plots! There’s lots of tutorials online that I recommend checking out. But for now, here’s a brief explanation of how our code works. Below, I’ve copied and pasted the code from above, but this time there are explanations scattered throughout. The explanations start with a <code>#</code> (called a comment) and are gray. See if you can find out which line creates the title of the graph!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Tell R what data to use and what the x and y values are</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>co2DataFiltered, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>year_chr, <span class="at">y=</span>value, <span class="at">fill=</span>name))<span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Select what kind of graph we're making</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position=</span><span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Label the graph to make it easy to read</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"CO2 Production from Energy Vs. Other Sources"</span>, <span class="at">x=</span><span class="st">"Year"</span>, <span class="at">y=</span><span class="st">"CO2 In Tons"</span>) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">#add a legend to show what each color means </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name=</span><span class="st">"CO2 Source"</span>, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"CO2 from Energy"</span>, <span class="st">"All Other Sources of CO2"</span>)) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">#make it pretty :)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Were you able to tell which line created the title??</p>
+<p>If you want even more code to look at, keep reading! You can also feel free to skip to the next section called <strong>Scatter Plot Generator</strong></p>
+<p>Below, you can see the code that was used to filter our data and make it easier to use in a bar graph. This is code that we ran secretly in the background before you created the bar graph. It takes the <code>co2Data</code> and edits it to make it easier to graph with.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creates new columns called "co2_from_energy" that includes co2 data from coal, gas, oil. </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Then creates a column called "co2_no_energy" that is the rest of the co2 production</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>co2DataBar<span class="ot">&lt;-</span>co2Data<span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year)<span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">co2_from_energy=</span><span class="fu">sum</span>(coal_co2, gas_co2, oil_co2, <span class="at">na.rm=</span>T))<span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">co2_no_energy=</span>co2<span class="sc">-</span>co2_from_energy)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Filter data to get just the columns we need and make it graphable</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Tells R to only use "year", "co2_no_energy" and "co2_from_energy" in the graph. </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>co2DataFiltered<span class="ot">&lt;-</span>co2DataBar<span class="sc">%&gt;%</span><span class="fu">select</span>(year, co2_no_energy, co2_from_energy)<span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Chooses only years above 2019</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year<span class="sc">&gt;=</span><span class="dv">2019</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#A few final adjustments to make the graph easier to use</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="fu">c</span>(co2_no_energy, co2_from_energy))<span class="sc">%&gt;%</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year_chr=</span><span class="fu">as.character</span>(year))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="scatter-plot-generator" class="level2">
 <h2 class="anchored" data-anchor-id="scatter-plot-generator">Scatter Plot Generator!</h2>
-<p>Using this code, we can choose any two variables and see how they relate to each other! If your questions haven’t been answered by the infographics and graphs you’ve already seen, take a look at the data and see what you can ask to try and learn more.</p>
+<p>Now you get to try creating your own plot! You will be able to choose any two variables and see how they relate to each other. If your questions haven’t been answered by the infographics and graphs you’ve already seen, take a look at the data and see what you can ask to try and learn more.</p>
+<p>First, decide which variable you want to learn about. You can choose any variable from <code>co2Data</code>. Here are some options:</p>
+<ul>
+<li>population</li>
+<li>year</li>
+<li>cement_co2</li>
+<li>co2</li>
+<li>consumption_co2</li>
+<li>cumulative_co2</li>
+<li>energy_per_gdp</li>
+<li>land_use_change_co2</li>
+<li>gas_co2</li>
+<li>coal_co2</li>
+<li>cement_co2</li>
+<li>land_use_change_co2</li>
+<li>methane</li>
+<li>temperature_change_from_co2</li>
+</ul>
+<p>Choose two of these variables that you want to plot against each other. Then, in the code chunk below, type them inside the quotes. Make sure you leave the quotes and just replace the line. Also make sure you type the variable name exactly - in fact, you can just copy and paste from the list.</p>
+<p>Then click “run code”!</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<p>Now, let’s add titles and labels to your graph! Again, type your title between the quotation marks. Then click “run code”!</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<p>Finally, run this to see your scatter plot! Click “run code” and if something doesn’t look right, click through the “troubleshooting” tabs to see how to fix it.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Troubleshooting - points clustered at the bottom</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Troubleshooting: error message</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>If your points are clustered at the bottom of your graph, this may be because it goes all the way back to 1750 and there wasn’t much change until much more recently. So try running this code instead. It will display your graph from 2000 to 2020.</p>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>Did you get an error message in red?</p>
+<ul>
+<li><p>If the graph also displayed and looks right, don’t worry about the error message!</p></li>
+<li><p>If the graph is not displaying, go back and make sure you ran all the code chunks previously where you defined the variables and labels.</p>
+<ul>
+<li>Did you put everything in quotes when you defined the variables and labels?</li>
+</ul></li>
+<li><p>You don’t need to edit this code at all, just the code where you define variables and labels</p></li>
+<li><p>If it still isn’t working or if you accidentally deleted something, you can refresh the page to restart.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<p>Nice work! Hopefully you enjoyed making your own graph with this data!</p>
 
 
 </section>
