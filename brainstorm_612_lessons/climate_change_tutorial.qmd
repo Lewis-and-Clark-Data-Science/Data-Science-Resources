@@ -26,6 +26,12 @@ co2Data<- read_csv("co2Data.csv")
 co2Data<-co2Data%>%
   filter(country=="World")
 #Filter out individual countries, just have world data
+
+url<- "https://lewis-and-clark-data-science.github.io/Olivia-test/data.csv"
+download.file(url, "data.csv")
+#Pulls data that has been loaded into the Olivia-Test github repo. 
+
+tempData<- read_csv("data.csv")
 ```
 
 Welcome to this data science tutorial! We'll be using R to look at climate change data.
@@ -44,26 +50,38 @@ In the code box right below this, type in `6+3` and press the green play button:
 
 Do you see the answer `9` that popped out right under your code? Pretty cool! 
 
+The gray and white box with the green arrow and "run code" button is called a code chunk. You can type in "R commands" into that box and it will output the answer underneath the code chunk. 
+
 ## Our Data
 
 Today we'll be using R to look at climate data. We will be able to create graphs of different variables in our data, like carbon dioxide emissions and temperature. 
 
 We've preloaded a dataset into this tutorial. This was found 
+
 ### Where??
+
 Let's start by taking a look at the data set. Click the green play button below and see what happens! 
 
 ```{webr-r}
 co2Data
 ```
 
-Do you see
+You should see 10 rows of data and a lot of random words. We won't go into what all of it means, but here's a quick overview: 
+
+  - The words on the top (country, year, iso_code, population, etc) are the different **variables** in our data set
+  
+  - Underneath those words are the **type of variable**, which we'll ignore right now. 
+  
+  - Below that, you'll see some numbers and NA values. Those are different values for each variable. 
 
 Our data is called `co2Data`. If you type `co2Data` into any code chunk, you'll be able to see our data. 
 
 
 ## Our First Graph
 
-Now lets make a graph that just looks at the worlds CO2 Emissions over time, this data goes all the way back to 1750!
+We can use R to do all sorts of things, including make graphs easily and quickly! In this tutorial we won't be able to cover all the details of how to make a graph, but there's lots of resources online you can find to learn more. We use something called `ggplot` to make graphs in this tutorial. 
+
+First, lets make a graph that just looks at the worlds CO2 Emissions over time, this data goes all the way back to 1750!
 
 ```{webr-r}
 ggplot(data=co2Data, mapping=aes(x=year, y=co2))+
@@ -76,7 +94,10 @@ ggplot(data=co2Data, mapping=aes(x=year, y=co2))+
 
 ## Temperature Data
 
-What if we want to compare this to how the worlds temperature has changed over this same time. We can't find temperature data directly, but we can easily look at how different the temperature that year is from the average in 1900.
+What if we want to compare this to how the worlds temperature has changed over this same time? 
+We have another dataset that contains temperature data. It tells us how *different* the temperature each year is from the average in 1900. 
+
+In the code chunk below type `tempData` and click "run code" to see the new data set. 
 
 ```{webr-r}
 tempData<-read_csv("data.csv")
