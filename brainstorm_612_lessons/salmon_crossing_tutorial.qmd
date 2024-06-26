@@ -7,6 +7,44 @@ filters:
 editor: visual
 ---
 
+```{webr-r}
+
+
+
+```
+
 Hello! Welcome to this tutorial. We're going to learn about how a computer can use HUGE amounts of data and make cool graphs from it. Today we'll get to learn about fish crossings at dams in the Columbia River.
 
-![From https://www.spokesman.com/blogs/outdoors/2015/may/08/how-fast-can-salmon-swim-upstream-idaho-waters/](~/Documents/Olivia-test/brainstorm_612_lessons/Images/salmon_dog.jpg)
+![From https://www.spokesman.com/blogs/outdoors/2015/may/08/how-fast-can-salmon-swim-upstream-idaho-waters/](brainstorm_612_lessons/Images/salmon_dog.jpg){fig-align="left", fig-alt="A dog jumping towards Chinook salmon in a fish ladder"}
+
+We're going to use a coding language called "R". Basically, "R" is a collection of commands that the computer understands. You can tell the computer one of the commands and it will know to do something. 
+
+For example one command the computer knows is multiplication! Try typing `5*3` in the box right below this. Then click the green play button that says "run code" 
+
+```{webr-r}
+# Type your code here!
+
+
+```
+
+What happened? Did you see the number 15 pop out? 
+
+The computer can also do very complicated things, like create graphs. We'll learn more about that later in this tutorial. 
+
+The box above where you typed `5*3` is called a **code chunk**. You can type commands into any similar box and it will tell the computer to do various things. 
+
+One thing the computer is very useful for is dealing with HUGE amounts of data. **Data** is a collection of lots of numbers that tell us information about something. 
+
+For example, if you measured the temperature every single day for 1 month and wrote it down, you would create data! 
+
+At the Bonneville dam, there is someone who does something similar with fish. They count how many fish cross the Bonneville dam every single day. Then they write down exactly how many fish they see, what time and what kind of fish. All those numbers are called **data**! Then, someone puts all that data online for anyone to see (like us!). 
+
+In fact, I found that data online and downloaded it. Want to look at it? Click the green play button on the code chunk below. 
+
+```{webr-r}
+
+```
+
+
+
+
