@@ -10,7 +10,11 @@ project:
     - owid_co2_data_1.csv
     - data.csv
       #This loads our csv onto the site so it can be called up by users later
+<<<<<<< HEAD
     - brainstorm_612_lessons/Images/salmon_dog.jpg
+=======
+    - 1900_census_race_and_birthplace.csv
+>>>>>>> ae142eb586555d102a124bc1c91399ee2650057f
 
 
 website:
