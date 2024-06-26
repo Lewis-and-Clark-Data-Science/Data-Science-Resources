@@ -10,6 +10,7 @@ project:
     - owid_co2_data_1.csv
     - data.csv
       #This loads our csv onto the site so it can be called up by users later
+    - brainstorm_612_lessons/Images/salmon_dog.jpg
 
 
 website:
@@ -18,6 +19,7 @@ website:
     left:
       - about.qmd
       - brainstorm_612_lessons/climate_change_tutorial.qmd
+      - brainstorm_612_lessons/salmon_crossing_tutorial.qmd
       - Cheatsheet.qmd
 
 format:

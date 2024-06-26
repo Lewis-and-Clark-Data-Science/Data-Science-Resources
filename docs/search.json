@@ -96,5 +96,12 @@
     "title": "About",
     "section": "",
     "text": "Currently using this website to test out different projects…\nLink to github with repositories with various tutorials"
+  },
+  {
+    "objectID": "brainstorm_612_lessons/salmon_crossing_tutorial.html",
+    "href": "brainstorm_612_lessons/salmon_crossing_tutorial.html",
+    "title": "Salmon Crossing Data Tutorial",
+    "section": "",
+    "text": "Hello! Welcome to this tutorial. We’re going to learn about how a computer can use HUGE amounts of data and make cool graphs from it. Today we’ll get to learn about fish crossings at dams in the Columbia River.\n\n\n\nFrom https://www.spokesman.com/blogs/outdoors/2015/may/08/how-fast-can-salmon-swim-upstream-idaho-waters/"
   }
 ]
