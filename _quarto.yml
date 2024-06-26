@@ -11,6 +11,7 @@ project:
     - data.csv
       #This loads our csv onto the site so it can be called up by users later
     - brainstorm_612_lessons/Images/salmon_dog.jpg
+    - brainstorm_612_lessons/data
 
 
 website:
