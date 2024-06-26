@@ -22,6 +22,7 @@ website:
       - brainstorm_612_lessons/climate_change_tutorial.qmd
       - brainstorm_612_lessons/salmon_crossing_tutorial.qmd
       - Cheatsheet.qmd
+      - brainstorm_612_lessons/Data_present_fish_tutorial.qmd
 
 format:
   html:
