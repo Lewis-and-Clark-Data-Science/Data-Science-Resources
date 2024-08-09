@@ -6,23 +6,14 @@ project:
     - "!Intro R Tutorial.qmd"
     - "!Testing shinylive.qmd"
     - "!TestUploadData.qmd"
-  resources: 
-    - owid_co2_data_1.csv
-    - data.csv
-      #This loads our csv onto the site so it can be called up by users later
-    - brainstorm_612_lessons/Images/salmon_dog.jpg
-    - brainstorm_612_lessons/data
 
 
 website:
-  title: "Olivia test - hello quarto"
+  title: "Lewis & Clark College Data Science Resources Hub"
   navbar:
     left:
-      - about.qmd
-      - brainstorm_612_lessons/climate_change_tutorial.qmd
-      - brainstorm_612_lessons/salmon_crossing_tutorial.qmd
+      - ditw.qmd
       - Cheatsheet.qmd
-      - brainstorm_612_lessons/Data_present_fish_tutorial.qmd
 
 format:
   html:

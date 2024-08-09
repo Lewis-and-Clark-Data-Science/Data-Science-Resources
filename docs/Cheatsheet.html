@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Olivia test - hello quarto - Cheatsheet for Data in the Wild Tutorials</title>
+<title>Lewis &amp; Clark College Data Science Resources Hub - Cheatsheet for Data in the Wild Tutorials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -305,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"context":"setup","editor-max-height":"","dpi":72,"message":"true","warning":"true","read-only":"false","editor-font-scale":"1","fig-height":5,"results":"markup","autorun":"true","classes":"","comment":"","label":"unnamed-chunk-1","out-height":"","out-width":"700px","fig-width":7,"fig-cap":"","editor-quick-suggestions":"false","output":"true"},"code":"\nlibrary(tidyverse)\nlibrary(palmerpenguins)"},{"id":2,"options":{"context":"interactive","editor-max-height":"","dpi":72,"message":"true","warning":"true","read-only":"false","editor-font-scale":"1","fig-height":5,"results":"markup","autorun":"false","classes":"","comment":"","label":"unnamed-chunk-2","out-height":"","out-width":"700px","fig-width":7,"fig-cap":"","editor-quick-suggestions":"false","output":"true"},"code":"penguins"},{"id":3,"options":{"context":"interactive","editor-max-height":"","dpi":72,"message":"true","warning":"true","read-only":"false","editor-font-scale":"1","fig-height":5,"results":"markup","autorun":"false","classes":"","comment":"","label":"unnamed-chunk-3","out-height":"","out-width":"700px","fig-width":7,"fig-cap":"","editor-quick-suggestions":"false","output":"true"},"code":"penguins |> \n  group_by(island) |> \n  summarize(medianFlipperLength = median(flipper_length_mm, na.rm=TRUE))|> \n  \n  ggplot(mapping=aes(x=island, y=medianFlipperLength, fill=island))+\n    geom_bar(stat=\"identity\")+\n    labs(title=\"Median Flipper Length on each Island\", x=\"Island\", y=\"Flipper Length (mm)\")"},{"id":4,"options":{"context":"interactive","editor-max-height":"","dpi":72,"message":"true","warning":"true","read-only":"false","editor-font-scale":"1","fig-height":5,"results":"markup","autorun":"false","classes":"","comment":"","label":"unnamed-chunk-4","out-height":"","out-width":"700px","fig-width":7,"fig-cap":"","editor-quick-suggestions":"false","output":"true"},"code":"AdelieData <- penguins |> \n  filter(species == \"Adelie\")\n\nggplot(data=AdelieData, mapping = aes(x = sex, y = flipper_length_mm, fill=sex))+\n  stat_boxplot(geom=\"errorbar\")+\n  geom_boxplot()+\n  labs(title=\"Boxplot of Adelie penguin flipper length, by sex\", x=\"Sex\",y=\"Flipper Length (mm)\")"}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"comment":"","out-height":"","output":"true","editor-quick-suggestions":"false","message":"true","fig-width":7,"editor-max-height":"","out-width":"700px","autorun":"true","warning":"true","read-only":"false","editor-font-scale":"1","fig-height":5,"dpi":72,"classes":"","label":"unnamed-chunk-1","context":"setup","results":"markup","fig-cap":""},"code":"\nlibrary(tidyverse)\nlibrary(palmerpenguins)"},{"id":2,"options":{"comment":"","out-height":"","output":"true","editor-quick-suggestions":"false","message":"true","fig-width":7,"editor-max-height":"","out-width":"700px","autorun":"false","warning":"true","read-only":"false","editor-font-scale":"1","fig-height":5,"dpi":72,"classes":"","label":"unnamed-chunk-2","context":"interactive","results":"markup","fig-cap":""},"code":"penguins"},{"id":3,"options":{"comment":"","out-height":"","output":"true","editor-quick-suggestions":"false","message":"true","fig-width":7,"editor-max-height":"","out-width":"700px","autorun":"false","warning":"true","read-only":"false","editor-font-scale":"1","fig-height":5,"dpi":72,"classes":"","label":"unnamed-chunk-3","context":"interactive","results":"markup","fig-cap":""},"code":"penguins |> \n  group_by(island) |> \n  summarize(medianFlipperLength = median(flipper_length_mm, na.rm=TRUE))|> \n  \n  ggplot(mapping=aes(x=island, y=medianFlipperLength, fill=island))+\n    geom_bar(stat=\"identity\")+\n    labs(title=\"Median Flipper Length on each Island\", x=\"Island\", y=\"Flipper Length (mm)\")"},{"id":4,"options":{"comment":"","out-height":"","output":"true","editor-quick-suggestions":"false","message":"true","fig-width":7,"editor-max-height":"","out-width":"700px","autorun":"false","warning":"true","read-only":"false","editor-font-scale":"1","fig-height":5,"dpi":72,"classes":"","label":"unnamed-chunk-4","context":"interactive","results":"markup","fig-cap":""},"code":"AdelieData <- penguins |> \n  filter(species == \"Adelie\")\n\nggplot(data=AdelieData, mapping = aes(x = sex, y = flipper_length_mm, fill=sex))+\n  stat_boxplot(geom=\"errorbar\")+\n  geom_boxplot()+\n  labs(title=\"Boxplot of Adelie penguin flipper length, by sex\", x=\"Sex\",y=\"Flipper Length (mm)\")"}];
 
 </script>
 <script type="module">
@@ -1154,7 +1154,7 @@ globalThis.qwebrExecuteCode = async function (
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Olivia test - hello quarto</span>
+    <span class="navbar-title">Lewis &amp; Clark College Data Science Resources Hub</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -1164,24 +1164,12 @@ globalThis.qwebrExecuteCode = async function (
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./brainstorm_612_lessons/climate_change_tutorial.html"> 
-<span class="menu-text">Climate Change Data Tutorial</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./brainstorm_612_lessons/salmon_crossing_tutorial.html"> 
-<span class="menu-text">Salmon Crossing Data Tutorial</span></a>
+    <a class="nav-link" href="./ditw.html"> 
+<span class="menu-text">Data in the Wild Modules - Downloadable R tutorials</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./Cheatsheet.html" aria-current="page"> 
 <span class="menu-text">Cheatsheet for Data in the Wild Tutorials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./brainstorm_612_lessons/Data_present_fish_tutorial.html"> 
-<span class="menu-text">Bonneville Dam Data Exploration</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
