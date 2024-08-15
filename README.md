@@ -4,7 +4,7 @@ Here you can find various resources on data science and R coding that Lewis & Cl
 
 Check out the following [website](https://lewis-and-clark-data-science.github.io/Data-Science-Resources/) to see all our resources: <https://lewis-and-clark-data-science.github.io/Data-Science-Resources/>
 
-We've also linked most of the resources on this readme:
+We've also linked most of the resources on this README:
 
 -   [Link to main github organization](https://github.com/Lewis-and-Clark-Data-Science): includes repositories with various tutorials.
 
