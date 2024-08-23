@@ -14,6 +14,7 @@ website:
     left:
       - ditw.qmd
       - Cheatsheet.qmd
+  favicon: science.png
 
 format:
   html:
