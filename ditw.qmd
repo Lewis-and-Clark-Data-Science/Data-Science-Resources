@@ -12,7 +12,7 @@ To use the tutorials, download the following .zip files and open in an R project
 
 We recommend you begin with the code-a-long and refer to the code-a-long key to determine which commands to type in the code-a-long. Then, proceed to the homework and practice problems for more practice.
 
-[Module 1 - Basic data wrangling .zip file](https://github.com/Lewis-and-Clark-Data-Science/Data-Science-Resources/raw/refs/heads/main/files/DITW_Inferential_stats.zip)
+[Module 1 - Basic data wrangling .zip file](https://github.com/Lewis-and-Clark-Data-Science/Data-Science-Resources/raw/refs/heads/main/files/DITW_Module1.zip)
 
 [Module 2 - Plotting with ggplot .zip file](https://lewis-and-clark-data-science.github.io/Data-Science-Resources/raw/refs/heads/main/files/DITW_Module2.zip)
 
