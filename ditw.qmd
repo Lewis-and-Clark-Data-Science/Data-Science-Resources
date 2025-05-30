@@ -14,7 +14,7 @@ We recommend you begin with the code-a-long and refer to the code-a-long key to 
 
 [Module 1 - Basic data wrangling .zip file](https://github.com/Lewis-and-Clark-Data-Science/Data-Science-Resources/raw/refs/heads/main/files/DITW_Module1.zip)
 
-[Module 2 - Plotting with ggplot .zip file](https://lewis-and-clark-data-science.github.io/Data-Science-Resources/raw/refs/heads/main/files/DITW_Module2.zip)
+[Module 2 - Plotting with ggplot .zip file](https://github.com/Lewis-and-Clark-Data-Science/Data-Science-Resources/raw/refs/heads/main/files/DITW_Module2.zip)
 
 [Module 3 - Inferential Statistics .zip file](https://lewis-and-clark-data-science.github.io/Data-Science-Resources/raw/refs/heads/main/files/DITW_Inferential_stats.zip)
 
